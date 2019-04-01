@@ -51,10 +51,10 @@
     "jest-cli": "^24.1.0"
   },
   "bugs": {
-    "url": "https://github.com/Simp-lexx/project-lvl2-s443/issues"
+    "url": "https://github.com/Simp-lexx/project-lvl3-s444/issues"
   },
   "jest": {
     "testEnvironment": "node"
   },
-  "homepage": "https://github.com/Simp-lexx/project-lvl2-s443#readme"
+  "homepage": "https://github.com/Simp-lexx/project-lvl3-s444#readme"
 }

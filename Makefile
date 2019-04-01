@@ -16,4 +16,3 @@ build:
 
 test:
 	npm test
-	
