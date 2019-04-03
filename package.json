@@ -1,6 +1,6 @@
 {
   "name": "page-loader-sl",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Page Loader",
   "main": "dist/index.js",
   "scripts": {
@@ -30,8 +30,13 @@
   "dependencies": {
     "axios": "^0.18.0",
     "commander": "^2.19.0",
+    "fs": "0.0.1-security",
     "lodash": "^4.17.11",
-    "npm": "^6.8.0"
+    "node": "^11.12.0",
+    "node.js": "0.0.0",
+    "npm": "^6.9.0",
+    "path": "^0.12.7",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -54,7 +59,18 @@
     "url": "https://github.com/Simp-lexx/project-lvl3-s444/issues"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "<rootDir>/.compiled/",
+      "<rootDir>/node_modules/",
+      "<rootDir>/.history/",
+      "<rootDir>/dist/"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov",
+      "text-summary"
+    ]
   },
   "homepage": "https://github.com/Simp-lexx/project-lvl3-s444#readme"
 }

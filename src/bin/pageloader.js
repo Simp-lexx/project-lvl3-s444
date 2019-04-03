@@ -7,8 +7,8 @@ program
   .version(version)
   .description('Page loader')
   .arguments('<url>')
-  .option('-o, --output [path]', 'Destination path', './')
-  .action((url, options) => {
-    pageLoader(url, options);
+  .option('-o, --output [folder]', 'output folder', './')
+  .action((url) => {
+    pageLoader(url, program.options);
   })
   .parse(process.argv);
