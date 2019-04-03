@@ -54,7 +54,8 @@
     "url": "https://github.com/Simp-lexx/project-lvl3-s444/issues"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "collectCoverage": true
   },
   "homepage": "https://github.com/Simp-lexx/project-lvl3-s444#readme"
 }
