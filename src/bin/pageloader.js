@@ -5,10 +5,11 @@ import pageLoader from '..';
 
 program
   .version(version)
+  .description('Page loader')
   .arguments('<url>')
-  .description('Compares two configuration files and shows a difference.')
-  .option('-f, --format [type]', 'Output format', /^(diff|plain|json)$/i, 'diff')
-  .action((firstConfig, secondConfig) => {
-    console.log(genDiff(firstConfig, secondConfig, program.format));
+  .option('-d, --destination [path]', 'Destination path', './')
+  .action((url, options) => {
+    pageLoader(url, options)
+      .then(() => console.log(`${url} succesfully loaded`));
   })
   .parse(process.argv);
