@@ -7,9 +7,8 @@ program
   .version(version)
   .description('Page loader')
   .arguments('<url>')
-  .option('-d, --destination [path]', 'Destination path', './')
+  .option('-o, --output [path]', 'Destination path', './')
   .action((url, options) => {
-    pageLoader(url, options)
-      .then(() => console.log(`${url} succesfully loaded`));
+    pageLoader(url, options);
   })
   .parse(process.argv);
