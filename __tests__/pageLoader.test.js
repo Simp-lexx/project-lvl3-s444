@@ -5,7 +5,7 @@ import { promises as fsPromises } from 'fs';
 import nock from 'nock';
 import axios from 'axios';
 import httpAdapter from 'axios/lib/adapters/http';
-import pageLoader from '../pageLoader';
+import pageLoader from '../src/pageLoader';
 
 axios.defaults.adapter = httpAdapter;
 
