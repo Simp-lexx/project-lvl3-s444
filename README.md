@@ -4,7 +4,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/316f85aa0ddf03d1617a/maintainability)](https://codeclimate.com/github/Simp-lexx/project-lvl3-s444/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/316f85aa0ddf03d1617a/test_coverage)](https://codeclimate.com/github/Simp-lexx/project-lvl3-s444/test_coverage)
 
-## Install## Install
+## Install
 
 `$ npm install -g page-loader-sl`
 
