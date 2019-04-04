@@ -20,6 +20,6 @@ Page loader
 
 Options:
   -V, --version          output the version number
-  -o, --output [folder]  output folder (default: "/home/lexx/jscode/proj-three")
+  -o, --output [folder]  output folder (default: "/home")
   -h, --help             output usage information
 ```
