@@ -2,6 +2,7 @@ import { promises as fsPromises } from 'fs';
 import axios from 'axios';
 import path from 'path';
 import url from 'url';
+import debug from 'debug';
 import { formatName, getFiles, getDirectLinks, updateLocalLinks } from './utils';
 
 
@@ -14,9 +15,11 @@ import { formatName, getFiles, getDirectLinks, updateLocalLinks } from './utils'
 //   });
 // };
 
+const logger = debug('page-loader');
+
 export default (sourceUrl, destPath) => {
-  const fileName = formatName(sourceUrl, '.html');
-  const baseFilePath = path.join(destPath, fileName);
+  const htmlFileName = formatName(sourceUrl, '.html');
+  const baseFilePath = path.join(destPath, htmlFileName);
 
   const dirName = formatName(sourceUrl, '_files');
   const dirPath = path.join(baseFilePath, dirName);
@@ -28,6 +31,8 @@ export default (sourceUrl, destPath) => {
       const files = getFiles(response.data);
       filesLinks = getDirectLinks(files, sourceUrl);
       const htmlLocalLinks = updateLocalLinks(response.data, dirName);
+      logger(`Source page: ${sourceUrl}`);
+      logger(`Destination file path: ${baseFilePath}`);
       return fsPromises.writeFile(baseFilePath, htmlLocalLinks);
     })
     .then(() => fsPromises.mkdir(dirPath))
@@ -35,12 +40,14 @@ export default (sourceUrl, destPath) => {
       .get(link, { responseType: 'arraybuffer' })
       .then((response) => {
         const { pathname } = url.parse(link);
-        const currentName = formatName(pathname.substring(1));
-        const currentFilePath = `${dirPath}/${currentName}`;
-        return fsPromises.writeFile(currentFilePath, response.data);
+        const currentPathName = formatName(pathname.substring(1));
+        const localFullPath = `${dirPath}/${currentPathName}`;
+        logger(`Write downloaded data to: ${localFullPath}`);
+        return fsPromises.writeFile(localFullPath, response.data);
       }))))
+    .then(() => logger(`${sourceUrl} succesfully loaded`))
     .catch((error) => {
-      console.log(`${error.message}. Error occured. Url: ${url}`);
-      return error.response;
+      logger(`Error ${error.message} occured.`);
+      return Promise.reject(error);
     });
 };

@@ -12,7 +12,6 @@ export const formatName = (baseUrl, extension) => {
   const { hostname, pathname } = url.parse(baseUrl);
   const baseFileName = url.format({ hostname, pathname });
   const baseFileNameWoSlash = baseFileName[baseFileName.length - 1] === '/' ? baseFileName.slice(0, -1) : baseFileName;
-  console.log(baseFileNameWoSlash);
   if (extension) {
     return `${baseFileNameWoSlash.replace(/\W+/g, '-')}${extension}`;
   }
@@ -25,7 +24,6 @@ export const getFiles = (html) => {
   const $ = cheerio.load(html);
   const links = [];
   Object.keys(tagMap).forEach(tag => $(tag).each((i, elem) => {
-    console.log(i);
     const link = $(elem).attr(tagMap[tag]);
     if (link && !url.parse(link).hostname && link[1] !== '/') {
       links.push(link);
@@ -38,7 +36,6 @@ export const getDirectLinks = (links, baseUrl) => {
   const { protocol, host, pathname } = url.parse(baseUrl);
   return links.map((link) => {
     if (link[0] === '/') {
-      console.log()
       return url.format({ protocol, host, pathname: link });
     }
     return url.format({ protocol, host, pathname: `${pathname}${link}` });
@@ -49,7 +46,6 @@ export const updateLocalLinks = (html, dirName) => {
   const $ = cheerio.load(html);
   Object.keys(tagMap).forEach(tag => $(tag).map((i, elem) => {
     const link = $(elem).attr(tagMap[tag]);
-    console.log(link);
     if (link && !url.parse(link).hostname && link[1] !== '/') {
       const newLink = `${dirName}/${formatName(link)}`;
       return $(elem).attr(tagMap[tag], newLink);
