@@ -5,7 +5,7 @@ import { promises as fsPromises } from 'fs';
 import nock from 'nock';
 import axios from 'axios';
 import httpAdapter from 'axios/lib/adapters/http';
-import pageLoader from '..';
+import pageLoader from '../src';
 
 axios.defaults.adapter = httpAdapter;
 
@@ -58,4 +58,49 @@ test('Test download page with links', async () => {
   const received = await fsPromises.readFile(destFilePath, 'utf8');
 
   expect(received).toBe(expectedBody);
+});
+
+describe('Error tests', () => {
+  const host = 'http://test.com';
+  test('wrong output', async () => {
+    const testPath = '/';
+    const link = host.concat(testPath);
+    const output = 'folder/folder';
+    try {
+      await pageLoader(link, output);
+    } catch (e) {
+      expect(e).toThrowErrorMatchingSnapshot();
+    }
+  });
+  test('incorrect url', async () => {
+    const tempDir = await fsPromises.mkdtemp(
+      path.resolve(os.tmpdir(), 'page-loader-'),
+    );
+    const link = 'incorrect url';
+    const output = tempDir;
+    try {
+      await pageLoader(link, output);
+    } catch (e) {
+      expect(e).toThrowErrorMatchingSnapshot();
+    }
+  });
+  test('can\'t load resource', async () => {
+    const document = '<!DOCTYPE html><html><head><link href="/folder/file.css"></head><body></body></html>';
+    const tempDir = await fsPromises.mkdtemp(
+      path.resolve(os.tmpdir(), 'page-loader-'),
+    );
+    const testPath = '/';
+    const link = host.concat(testPath);
+    const output = tempDir;
+
+    nock(host)
+      .get(testPath)
+      .reply(200, document);
+
+    try {
+      await pageLoader(link, output);
+    } catch (e) {
+      expect(e).toThrowErrorMatchingSnapshot();
+    }
+  });
 });

@@ -21,19 +21,16 @@ export const formatName = (baseUrl, extension) => {
   const { hostname, pathname } = url.parse(baseUrl);
   const baseFileName = url.format({ hostname, pathname });
   const trimmedFileName = _.trim(baseFileName, '/');
-  console.log(trimmedFileName);
   const normalizeFileName = fileName => fileName.replace(/\W+/g, '-');
   let newFileName = '';
   let newExt = '';
   if (extension) {
     newExt = extension;
     newFileName = normalizeFileName(trimmedFileName);
-    console.log(newFileName);
   } else {
     newExt = path.extname(trimmedFileName);
     const fileNameWoExt = trimmedFileName.split(newExt)[0];
     newFileName = normalizeFileName(fileNameWoExt);
-    console.log(newExt);
   }
   return newFileName.concat(newExt);
 };

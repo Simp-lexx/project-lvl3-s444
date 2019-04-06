@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error tests can't load resource 1`] = `"received is not a function"`;
+
+exports[`Error tests incorrect url 1`] = `"received is not a function"`;

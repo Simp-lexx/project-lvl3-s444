@@ -1,6 +1,6 @@
 {
   "name": "pgload-sl",
-  "version": "0.3.5",
+  "version": "0.4.0",
   "description": "Page Loader",
   "main": "dist/index.js",
   "scripts": {
@@ -32,8 +32,10 @@
     "cheerio": "^1.0.0-rc.2",
     "commander": "^2.20.0",
     "debug": "^4.1.1",
+    "errno": "^0.1.7",
     "lodash": "^4.17.11",
-    "npm": "^6.9.0"
+    "npm": "^6.9.0",
+    "process": "^0.11.10"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",

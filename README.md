@@ -8,9 +8,19 @@
 
 `$ npm install -g page-loader-sl`
 
-## Usage
+## asciinema
+
+### Step1
 
 [![asciicast](https://asciinema.org/a/ky72uPCfob9ZF5J1Z75UFV5zd.svg)](https://asciinema.org/a/ky72uPCfob9ZF5J1Z75UFV5zd)
+
+### Step 2 - 3
+
+[![asciicast](https://asciinema.org/a/h4aQvsCgAwd97bGgGqi9YD7h5.svg)](https://asciinema.org/a/h4aQvsCgAwd97bGgGqi9YD7h5)
+
+### Step 4 (Test Errors)
+
+[![asciicast](https://asciinema.org/a/mQ6R8HfyRUqYnuHHArHcHyuaK.svg)](https://asciinema.org/a/mQ6R8HfyRUqYnuHHArHcHyuaK)
 
 ## Help
 

@@ -10,6 +10,12 @@ import {
 const writeLog = debug('page-loader');
 
 export default (sourceUrl, destPath) => {
+  const { protocol, hostname } = url.parse(sourceUrl);
+  if (!protocol && !hostname) {
+    const message = `Incorrent url ${sourceUrl}`;
+    throw new Error(message);
+  }
+
   const destFileName = formatName(sourceUrl, '.html');
   const destDirName = formatName(sourceUrl, '_files');
 
