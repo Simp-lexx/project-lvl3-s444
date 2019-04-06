@@ -3,51 +3,45 @@ import axios from 'axios';
 import path from 'path';
 import url from 'url';
 import debug from 'debug';
-import { formatName, getFiles, getDirectLinks, updateLocalLinks } from './utils';
+import {
+  formatName, buildFilesArray, getDirectLinks, updateLocalLinks,
+} from './utils';
 
-
-// export default (link, output) => {
-//   const destinationPath = buildDestPath(link, output);
-//   return axios.get(link).then(({ data }) => {
-//     fsPromises.writeFile(destinationPath, data).then(e => !e)
-//       .then(() => console.log(`${link} succesfully loaded`))
-//       .catch(err => (`${link} failed to load ${err}`));
-//   });
-// };
-
-const logger = debug('page-loader');
+const writeLog = debug('page-loader');
 
 export default (sourceUrl, destPath) => {
-  const htmlFileName = formatName(sourceUrl, '.html');
-  const baseFilePath = path.join(destPath, htmlFileName);
+  const destFileName = formatName(sourceUrl, '.html');
+  const destDirName = formatName(sourceUrl, '_files');
 
-  const dirName = formatName(sourceUrl, '_files');
-  const dirPath = path.join(baseFilePath, dirName);
+  const destFullFilePath = path.join(destPath, destFileName);
+  const destDirPath = path.join(destPath, destDirName);
 
   let filesLinks = [];
 
   return axios.get(sourceUrl)
     .then((response) => {
-      const files = getFiles(response.data);
-      filesLinks = getDirectLinks(files, sourceUrl);
-      const htmlLocalLinks = updateLocalLinks(response.data, dirName);
-      logger(`Source page: ${sourceUrl}`);
-      logger(`Destination file path: ${baseFilePath}`);
-      return fsPromises.writeFile(baseFilePath, htmlLocalLinks);
-    })
-    .then(() => fsPromises.mkdir(dirPath))
+      const getFilesArray = buildFilesArray(response.data);
+      filesLinks = getDirectLinks(getFilesArray, sourceUrl);
+      const htmlLocalLinks = updateLocalLinks(response.data, destDirName);
+      writeLog(`Source page: ${sourceUrl}`);
+      writeLog(`Destination file path: ${destFullFilePath}`);
+      return fsPromises.writeFile(destFullFilePath, htmlLocalLinks);
+    }).catch(error => console.error(error))
+    .then(() => fsPromises.mkdir(destDirPath))
+    .catch(error => console.error(error))
+    .then(writeLog(`Dir is created ${destDirPath}`))
     .then(() => Promise.all(filesLinks.map(link => axios
-      .get(link, { responseType: 'arraybuffer' })
+      .get(link, { responseType: 'arraybuffer' }).catch(error => console.error(error))
       .then((response) => {
         const { pathname } = url.parse(link);
         const currentPathName = formatName(pathname.substring(1));
-        const localFullPath = `${dirPath}/${currentPathName}`;
-        logger(`Write downloaded data to: ${localFullPath}`);
+        const localFullPath = path.join(destDirPath, currentPathName);
+        writeLog(`Write downloaded data to: ${localFullPath}`);
         return fsPromises.writeFile(localFullPath, response.data);
       }))))
-    .then(() => logger(`${sourceUrl} succesfully loaded`))
     .catch((error) => {
-      logger(`Error ${error.message} occured.`);
+      console.log(`Error ${error.message} occured.`);
+      console.error(error);
       return Promise.reject(error);
     });
 };

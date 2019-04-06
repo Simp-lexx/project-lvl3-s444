@@ -1,6 +1,7 @@
 import url from 'url';
 import path from 'path';
 import cheerio from 'cheerio';
+import _ from 'lodash';
 
 const tagMap = {
   img: 'src',
@@ -8,28 +9,43 @@ const tagMap = {
   link: 'href',
 };
 
+const isFile = (link) => {
+  if (!link) {
+    return false;
+  }
+  const { hostname } = url.parse(link);
+  return !hostname && link[1] !== '/';
+};
+
 export const formatName = (baseUrl, extension) => {
   const { hostname, pathname } = url.parse(baseUrl);
   const baseFileName = url.format({ hostname, pathname });
-  const baseFileNameWoSlash = baseFileName[baseFileName.length - 1] === '/' ? baseFileName.slice(0, -1) : baseFileName;
+  const trimmedFileName = _.trim(baseFileName, '/');
+  console.log(trimmedFileName);
+  const normalizeFileName = fileName => fileName.replace(/\W+/g, '-');
+  let newFileName = '';
+  let newExt = '';
   if (extension) {
-    return `${baseFileNameWoSlash.replace(/\W+/g, '-')}${extension}`;
+    newExt = extension;
+    newFileName = normalizeFileName(trimmedFileName);
+    console.log(newFileName);
+  } else {
+    newExt = path.extname(trimmedFileName);
+    const fileNameWoExt = trimmedFileName.split(newExt)[0];
+    newFileName = normalizeFileName(fileNameWoExt);
+    console.log(newExt);
   }
-  const newExtension = path.extname(baseFileNameWoSlash);
-  const baseFileNameWoExt = baseFileNameWoSlash.split(newExtension)[0];
-  return `${baseFileNameWoExt.replace(/\W+/g, '-')}${newExtension}`;
+  return newFileName.concat(newExt);
 };
 
-export const getFiles = (html) => {
+export const buildFilesArray = (html) => {
   const $ = cheerio.load(html);
-  const links = [];
+  const filesArray = [];
   Object.keys(tagMap).forEach(tag => $(tag).each((i, elem) => {
     const link = $(elem).attr(tagMap[tag]);
-    if (link && !url.parse(link).hostname && link[1] !== '/') {
-      links.push(link);
-    }
+    if (isFile(link)) filesArray.push(link);
   }));
-  return links;
+  return filesArray;
 };
 
 export const getDirectLinks = (links, baseUrl) => {
@@ -54,11 +70,3 @@ export const updateLocalLinks = (html, dirName) => {
   }));
   return $.html();
 };
-
-// export default (link, output = process.cwd()) => {
-//   const { hostname, pathname } = url.parse(link);
-//   const linkFileName = url.format({ hostname, pathname });
-//   const fileName = `${linkFileName.replace(/\W+/g, '-')}.html`;
-//   const destPath = path.join(output, fileName);
-//   return destPath;
-// };

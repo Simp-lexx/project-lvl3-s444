@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang='ru' prefix='og: http://ogp.me/ns#'>
-<head>
-<script type="text/javascript">var _rollbarConfig = {"accessToken":"fc27636027d0460bbc1578d97d0d27ad","captureUncaught":true,"captureUnhandledRejections":true,"hostWhiteList":["https://cdn2.hexlet.io"],"ignoredMessages":["Script error"],"payload":{"client":{"source_map_enabled":true,"code_version":"v3216","guess_uncaught_frames":true},"environment":"production","person":{"id":null,"username":null,"email":null}}};</script>
+<!DOCTYPE html><html lang="ru" prefix="og: http://ogp.me/ns#"><head>
+<script type="text/javascript">var _rollbarConfig = {"accessToken":"fc27636027d0460bbc1578d97d0d27ad","captureUncaught":true,"captureUnhandledRejections":true,"hostWhiteList":["https://cdn2.hexlet.io"],"ignoredMessages":["Script error"],"payload":{"client":{"source_map_enabled":true,"code_version":"v3220","guess_uncaught_frames":true},"environment":"production","person":{"id":null,"username":null,"email":null}}};</script>
 <script type="text/javascript">!function(r){function o(n){if(e[n])return e[n].exports;var t=e[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,o),t.loaded=!0,t.exports}var e={};return o.m=r,o.c=e,o.p="",o(0)}([function(r,o,e){"use strict";var n=e(1),t=e(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.5.4/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,o,e){"use strict";function n(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}function t(r,o){this.options=r,this._rollbarOldOnError=null;var e=s++;this.shimId=function(){return e},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[e]={handler:o,messages:[]})}function a(r,o){if(r){var e=o.globalAlias||"Rollbar";if("object"==typeof r[e])return r[e];r._rollbarShims={},r._rollbarWrappedError=null;var t=new p(o);return n(function(){o.captureUncaught&&(t._rollbarOldOnError=r.onerror,i.captureUncaughtExceptions(r,t,!0),i.wrapGlobals(r,t,!0)),o.captureUnhandledRejections&&i.captureUnhandledRejections(r,t,!0);var n=o.autoInstrument;return o.enabled!==!1&&(void 0===n||n===!0||"object"==typeof n&&n.network)&&r.addEventListener&&(r.addEventListener("load",t.captureLoad.bind(t)),r.addEventListener("DOMContentLoaded",t.captureDomContentLoaded.bind(t))),r[e]=t,t})()}}function l(r){return n(function(){var o=this,e=Array.prototype.slice.call(arguments,0),n={shim:o,method:r,args:e,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)})}var i=e(2),s=0,d=e(3),c=function(r,o){return new t(r,o)},p=function(r){return new d(c,r)};t.prototype.loadFull=function(r,o,e,t,a){var l=function(){var o;if(void 0===r._rollbarDidLoad){o=new Error("rollbar.js did not load");for(var e,n,t,l,i=0;e=r._rollbarShims[i++];)for(e=e.messages||[];n=e.shift();)for(t=n.args||[],i=0;i<t.length;++i)if(l=t[i],"function"==typeof l){l(o);break}}"function"==typeof a&&a(o)},i=!1,s=o.createElement("script"),d=o.getElementsByTagName("script")[0],c=d.parentNode;s.crossOrigin="",s.src=t.rollbarJsUrl,e||(s.async=!0),s.onload=s.onreadystatechange=n(function(){if(!(i||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){s.onload=s.onreadystatechange=null;try{c.removeChild(s)}catch(r){}i=!0,l()}}),c.insertBefore(s,d)},t.prototype.wrap=function(r,o,e){try{var n;if(n="function"==typeof o?o:function(){return o||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){e&&"function"==typeof e&&e.apply(this,arguments);try{return r.apply(this,arguments)}catch(e){var o=e;throw o&&("string"==typeof o&&(o=new String(o)),o._rollbarContext=n()||{},o._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=o),o}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(o){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<u.length;++f)t.prototype[u[f]]=l(u[f]);r.exports={setupShim:a,Rollbar:p}},function(r,o){"use strict";function e(r,o,e){if(r){var t;if("function"==typeof o._rollbarOldOnError)t=o._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;o._rollbarOldOnError=t}var a=function(){var e=Array.prototype.slice.call(arguments,0);n(r,o,t,e)};e&&(a._rollbarOldOnError=t),r.onerror=a}}function n(r,o,e,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null),o.handleUncaughtException.apply(o,n),e&&e.apply(r,n)}function t(r,o,e){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var e,n,t;try{e=r.reason}catch(r){e=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!e&&t&&(e=t.reason,n=t.promise)}catch(r){}e||(e="[unhandledrejection] error getting `reason` from event"),o&&o.handleUnhandledRejection&&o.handleUnhandledRejection(e,n)};n.belongsToShim=e,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}function a(r,o,e){if(r){var n,t,a="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(n=0;n<a.length;++n)t=a[n],r[t]&&r[t].prototype&&l(o,r[t].prototype,e)}}function l(r,o,e){if(o.hasOwnProperty&&o.hasOwnProperty("addEventListener")){for(var n=o.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(o,e,t){n.call(this,o,r.wrap(e),t)};t._rollbarOldAdd=n,t.belongsToShim=e,o.addEventListener=t;for(var a=o.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,o,e){a.call(this,r,o&&o._rollbar_wrapped||o,e)};l._rollbarOldRemove=a,l.belongsToShim=e,o.removeEventListener=l}}r.exports={captureUncaughtExceptions:e,captureUnhandledRejections:t,wrapGlobals:a}},function(r,o){"use strict";function e(r,o){this.impl=r(o,this),this.options=o,n(e.prototype)}function n(r){for(var o=function(r){return function(){var o=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,o)}},e="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<e.length;n++)r[e[n]]=o(e[n])}e.prototype._swapAndProcessMessages=function(r,o){this.impl=r(this.options);for(var e,n,t;e=o.shift();)n=e.method,t=e.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],e.ts]):this[n].apply(this,t));return this},r.exports=e},function(r,o){"use strict";r.exports=function(r){return function(o){if(!o&&!window._rollbarInitialized){r=r||{};for(var e,n,t=r.globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;e=window._rollbarShims[i++];)n||(n=e.handler),e.handler._swapAndProcessMessages(l,e.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);</script>
-<link rel="stylesheet" media="all" href="https://cdn2.hexlet.io/assets/application-662ed42be2682615d77cc5471b215f13613e737dc216d1a71c57b200a06a6f16.css" />
-<title>Онлайн-курсы по программированию - Hexlet</title>
-<meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="yG9LvvJeNhyxXvwb8FSFjqWiccr24iASaredzZB2v4NqizecnLBJRBatTciUSRUWW4GwqoZUF+KXWV53SFYYcQ==" />
-<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link rel="stylesheet" media="all" href="https://cdn2.hexlet.io/assets/application-662ed42be2682615d77cc5471b215f13613e737dc216d1a71c57b200a06a6f16.css">
+<title>&#x41E;&#x43D;&#x43B;&#x430;&#x439;&#x43D;-&#x43A;&#x443;&#x440;&#x441;&#x44B; &#x43F;&#x43E; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44E; - Hexlet</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="24XtlVsxYDeKJZlCNjXYiviGruNO9UpEOrq0hfJKhg4icUn9+IQZzedQSE+p+NJ0hyfPF/tJfham6Uw6DW3L3Q==">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <script>
 //<![CDATA[
-window.gon={};gon.hs={"autoloadBeacon":true};gon.applications={};gon.current_user={"id":null,"guest":true,"isGuest":true,"admin":false};gon.token="lEjLk9mDK64mnMpHOUbBvcapaV6jkiN2pGXXIrPCwaE2rLext21U9oFve5RdW1ElOIqoPtMkFIZZixSYa+JmUw==";gon.disqus_name="hexletio";gon.locale="ru";gon.rails_env="production";gon.analytics_events="AnalyticsEvents";gon.google_analytics_key="UA-1360700-51";gon.social_signin=null;gon.subdomains=["en.hexlet.io","ru.hexlet.io"];gon.images={"accepted_cards":"https:\/\/cdn2.hexlet.io\/assets\/accepted_cards-66bb4df39a3479040281f3f3705f9d87d4fe6d0af3b55442f938011bf790e0f1.png","cards_cvc_cvv":"https:\/\/cdn2.hexlet.io\/assets\/cards_cvc_cvv-c7cf65a352482099792fbb728d90616906c982218ce1c0ffde7fc43a51276b8a.png"};
+window.gon={};gon.hs={"autoloadBeacon":true};gon.applications={};gon.current_user={"id":null,"guest":true,"isGuest":true,"admin":false};gon.token="tettx0DARU+ENknegV+lvZ49KM7GTDgB\/PWDGoGVXHZMH8mv43U8telDmNMekq9D4ZxJOnPwDFNgpnulfrIRpQ==";gon.disqus_name="hexletio";gon.locale="ru";gon.rails_env="production";gon.analytics_events="AnalyticsEvents";gon.google_analytics_key="UA-1360700-51";gon.social_signin=null;gon.subdomains=["en.hexlet.io","ru.hexlet.io"];gon.images={"accepted_cards":"https:\/\/cdn2.hexlet.io\/assets\/accepted_cards-66bb4df39a3479040281f3f3705f9d87d4fe6d0af3b55442f938011bf790e0f1.png","cards_cvc_cvv":"https:\/\/cdn2.hexlet.io\/assets\/cards_cvc_cvv-c7cf65a352482099792fbb728d90616906c982218ce1c0ffde7fc43a51276b8a.png"};
 //]]>
 </script>
 <script>
@@ -58,7 +56,7 @@ window.gon={};gon.hs={"autoloadBeacon":true};gon.applications={};gon.current_use
   });
 </script>
 
-<script type='application/ld+json'>
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -76,94 +74,94 @@ window.gon={};gon.hs={"autoloadBeacon":true};gon.applications={};gon.current_use
 </script>
 
 
-<link rel="alternate" type="application/rss+xml" title="RSS" href="https://ru.hexlet.io/lessons.rss" />
-<link href='/courses' rel='canonical'>
-<meta content='website' property='og:type'>
-<meta content='Онлайн-курсы по программированию - Hexlet' property='og:title'>
-<meta content='https://ru.hexlet.io/courses' property='og:url'>
-<meta content='Практические курсы по программированию и разработке, видео-лекции, тесты и упражнения' name='description'>
-<meta content='Практические курсы по программированию и разработке, видео-лекции, тесты и упражнения' property='og:description'>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://ru.hexlet.io/lessons.rss">
+<link href="hexlet-io-courses_files/c" rel="canonical">
+<meta content="website" property="og:type">
+<meta content="&#x41E;&#x43D;&#x43B;&#x430;&#x439;&#x43D;-&#x43A;&#x443;&#x440;&#x441;&#x44B; &#x43F;&#x43E; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44E; - Hexlet" property="og:title">
+<meta content="https://ru.hexlet.io/courses" property="og:url">
+<meta content="&#x41F;&#x440;&#x430;&#x43A;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x435; &#x43A;&#x443;&#x440;&#x441;&#x44B; &#x43F;&#x43E; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44E; &#x438; &#x440;&#x430;&#x437;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;, &#x432;&#x438;&#x434;&#x435;&#x43E;-&#x43B;&#x435;&#x43A;&#x446;&#x438;&#x438;, &#x442;&#x435;&#x441;&#x442;&#x44B; &#x438; &#x443;&#x43F;&#x440;&#x430;&#x436;&#x43D;&#x435;&#x43D;&#x438;&#x44F;" name="description">
+<meta content="&#x41F;&#x440;&#x430;&#x43A;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x435; &#x43A;&#x443;&#x440;&#x441;&#x44B; &#x43F;&#x43E; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44E; &#x438; &#x440;&#x430;&#x437;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435;, &#x432;&#x438;&#x434;&#x435;&#x43E;-&#x43B;&#x435;&#x43A;&#x446;&#x438;&#x438;, &#x442;&#x435;&#x441;&#x442;&#x44B; &#x438; &#x443;&#x43F;&#x440;&#x430;&#x436;&#x43D;&#x435;&#x43D;&#x438;&#x44F;" property="og:description">
 
 </head>
-<body class='min-vh-100'>
+<body class="min-vh-100">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK88TH"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 
-<nav class='navbar navbar-expand-lg navbar-light bg-white hexlet-navbar shadow-sm'>
-<a aria-hidden='true' class='navbar-brand mr-4' href='/'>
+<nav class="navbar navbar-expand-lg navbar-light bg-white hexlet-navbar shadow-sm">
+<a aria-hidden="true" class="navbar-brand mr-4" href="/">
 Hexlet
 </a>
-<button aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-target='#navbarResponsive' data-toggle='collapse' type='button'>
-<span class='navbar-toggler-icon'></span>
+<button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarResponsive" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
 </button>
-<div class='collapse navbar-collapse' id='navbarResponsive'>
-<ul class='navbar-nav mr-auto'>
-<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/my"><div class="my-2">Мой Хекслет</div></a></li>
-<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/professions"><div class="my-2">Профессии</div></a></li>
-<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 active" href="/courses"><div class="my-2">Все курсы</div></a></li>
-<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/blog"><div class="my-2">Блог</div></a></li>
-<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/knowledge"><div class="my-2">База знаний</div></a></li>
-<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/pricing"><div class="my-2">Цены</div></a></li>
+<div class="collapse navbar-collapse" id="navbarResponsive">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/my"><div class="my-2">&#x41C;&#x43E;&#x439; &#x425;&#x435;&#x43A;&#x441;&#x43B;&#x435;&#x442;</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/professions"><div class="my-2">&#x41F;&#x440;&#x43E;&#x444;&#x435;&#x441;&#x441;&#x438;&#x438;</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 active" href="/courses"><div class="my-2">&#x412;&#x441;&#x435; &#x43A;&#x443;&#x440;&#x441;&#x44B;</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/blog"><div class="my-2">&#x411;&#x43B;&#x43E;&#x433;</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/knowledge"><div class="my-2">&#x411;&#x430;&#x437;&#x430; &#x437;&#x43D;&#x430;&#x43D;&#x438;&#x439;</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/pricing"><div class="my-2">&#x426;&#x435;&#x43D;&#x44B;</div></a></li>
 </ul>
-<ul class='navbar-nav'>
-<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/session/new?from=https%3A%2F%2Fru.hexlet.io%2Fcourses"><div class="my-2">Вход</div></a></li>
-<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/u/new?from=https%3A%2F%2Fru.hexlet.io%2Fcourses"><div class="my-2">Регистрация</div></a></li>
+<ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/session/new?from=https%3A%2F%2Fru.hexlet.io%2Fcourses"><div class="my-2">&#x412;&#x445;&#x43E;&#x434;</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/u/new?from=https%3A%2F%2Fru.hexlet.io%2Fcourses"><div class="my-2">&#x420;&#x435;&#x433;&#x438;&#x441;&#x442;&#x440;&#x430;&#x446;&#x438;&#x44F;</div></a></li>
 </ul>
 </div>
 </nav>
-<div class='text-center py-3'>
-<div class='h2 text-warning'>Основные возможности платформы Hexlet не доступны в вашем браузере.<br>
-Пожалуйста, обновитесь. <a href="http://outdatedbrowser.com/ru">Выбрать браузер</a>.
+<div class="text-center py-3">
+<div class="h2 text-warning">&#x41E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x44B;&#x435; &#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x43F;&#x43B;&#x430;&#x442;&#x444;&#x43E;&#x440;&#x43C;&#x44B; Hexlet &#x43D;&#x435; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x43D;&#x44B; &#x432; &#x432;&#x430;&#x448;&#x435;&#x43C; &#x431;&#x440;&#x430;&#x443;&#x437;&#x435;&#x440;&#x435;.<br>
+&#x41F;&#x43E;&#x436;&#x430;&#x43B;&#x443;&#x439;&#x441;&#x442;&#x430;, &#x43E;&#x431;&#x43D;&#x43E;&#x432;&#x438;&#x442;&#x435;&#x441;&#x44C;. <a href="http://outdatedbrowser.com/ru">&#x412;&#x44B;&#x431;&#x440;&#x430;&#x442;&#x44C; &#x431;&#x440;&#x430;&#x443;&#x437;&#x435;&#x440;</a>.
 </div>
 </div>
 
 
-<main role='main'>
-<div class='container my-5'>
-<div class='row justify-content-center'>
-<div class='col-12 col-md-7 col-lg-5 border-left'>
-<div class='h5 text-center'>По языку</div>
-<div class='row mt-4'>
-<div class='col-2'>
-<ul class='list-unstyled'>
-<li class='m-2'>
-Все
+<main role="main">
+<div class="container my-5">
+<div class="row justify-content-center">
+<div class="col-12 col-md-7 col-lg-5 border-left">
+<div class="h5 text-center">&#x41F;&#x43E; &#x44F;&#x437;&#x44B;&#x43A;&#x443;</div>
+<div class="row mt-4">
+<div class="col-2">
+<ul class="list-unstyled">
+<li class="m-2">
+&#x412;&#x441;&#x435;
 </li>
 </ul>
 </div>
-<div class='col-10'>
-<div class='row'>
-<div class='col'>
-<ul class='list-unstyled'>
-<li class='m-2'>
+<div class="col-10">
+<div class="row">
+<div class="col">
+<ul class="list-unstyled">
+<li class="m-2">
 <a href="/courses?language_eq=ruby">Ruby</a>
 </li>
-<li class='m-2'>
+<li class="m-2">
 <a href="/courses?language_eq=python">Python</a>
 </li>
-<li class='m-2'>
+<li class="m-2">
 <a href="/courses?language_eq=php">PHP</a>
 </li>
-<li class='m-2'>
+<li class="m-2">
 <a href="/courses?language_eq=javascript">JavaScript</a>
 </li>
 </ul>
 </div>
-<div class='col'>
-<ul class='list-unstyled'>
-<li class='m-2'>
+<div class="col">
+<ul class="list-unstyled">
+<li class="m-2">
 <a href="/courses?language_eq=java">Java</a>
 </li>
-<li class='m-2'>
+<li class="m-2">
 <a href="/courses?language_eq=sql">SQL</a>
 </li>
-<li class='m-2'>
+<li class="m-2">
 <a href="/courses?language_eq=shell">Shell (Utils)</a>
 </li>
-<li class='m-2'>
+<li class="m-2">
 <a href="/courses?language_eq=html">HTML &amp; CSS</a>
 </li>
 </ul>
@@ -172,25 +170,25 @@ Hexlet
 </div>
 </div>
 </div>
-<div class='col-12 col-md-5 col-lg-4 mt-4 mt-md-0 border-left border-right'>
-<div class='h5 text-center'>По уровню подписки</div>
-<div class='row mt-4'>
-<div class='col-2'>
-<ul class='list-unstyled'>
-<li class='m-2'>
-Все
+<div class="col-12 col-md-5 col-lg-4 mt-4 mt-md-0 border-left border-right">
+<div class="h5 text-center">&#x41F;&#x43E; &#x443;&#x440;&#x43E;&#x432;&#x43D;&#x44E; &#x43F;&#x43E;&#x434;&#x43F;&#x438;&#x441;&#x43A;&#x438;</div>
+<div class="row mt-4">
+<div class="col-2">
+<ul class="list-unstyled">
+<li class="m-2">
+&#x412;&#x441;&#x435;
 </li>
 </ul>
 </div>
-<div class='col-10'>
-<div class='row'>
-<div class='col'>
-<ul class='list-unstyled'>
-<li class='m-2'>
-<a href="/courses?pricing_type_eq=paid">Профессиональные</a>
+<div class="col-10">
+<div class="row">
+<div class="col">
+<ul class="list-unstyled">
+<li class="m-2">
+<a href="/courses?pricing_type_eq=paid">&#x41F;&#x440;&#x43E;&#x444;&#x435;&#x441;&#x441;&#x438;&#x43E;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x435;</a>
 </li>
-<li class='m-2'>
-<a href="/courses?pricing_type_eq=free">Базовые</a>
+<li class="m-2">
+<a href="/courses?pricing_type_eq=free">&#x411;&#x430;&#x437;&#x43E;&#x432;&#x44B;&#x435;</a>
 </li>
 </ul>
 </div>
@@ -199,1734 +197,1734 @@ Hexlet
 </div>
 </div>
 </div>
-<div class='mt-5'>
-<h1 class='mb-5 h4'>Все курсы</h1>
-<div class='row'>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-16 часов
+<div class="mt-5">
+<h1 class="mb-5 h4">&#x412;&#x441;&#x435; &#x43A;&#x443;&#x440;&#x441;&#x44B;</h1>
+<div class="row">
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-code fal"></i>
+<div class="ml-auto my-auto">
+15 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>JS: Обработка ошибок
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">Java: &#x41D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x43E;&#x43A;&#x440;&#x443;&#x436;&#x435;&#x43D;&#x438;&#x44F;</h5>
+</div>
+<div class="text-muted">&#x412; &#x44D;&#x442;&#x43E;&#x43C; &#x43A;&#x443;&#x440;&#x441;&#x435; &#x440;&#x430;&#x441;&#x441;&#x43C;&#x430;&#x442;&#x440;&#x438;&#x432;&#x430;&#x44E;&#x442;&#x441;&#x44F; &#x43F;&#x43E;&#x43D;&#x44F;&#x442;&#x438;&#x435; &#x44F;&#x437;&#x44B;&#x43A;&#x430; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;, &#x43E;&#x441;&#x43E;&#x431;&#x435;&#x43D;&#x43D;&#x43E;&#x441;&#x442;&#x438; Java &#x438; &#x435;&#x433;&#x43E; &#x441;&#x432;&#x44F;&#x437;&#x438; &#x441; &#x43F;&#x43B;&#x430;&#x442;&#x444;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/java-env">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+16 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">JS: &#x41E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x430; &#x43E;&#x448;&#x438;&#x431;&#x43E;&#x43A;
 </h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>Этот курс посвящён обработке ошибок в программах на JavaScript. Рассматриваются такие темы, как к...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/js_errors">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-code fal'></i>
-<div class='ml-auto my-auto'>
-15 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Java: Настройка окружения</h5>
-</div>
-<div class='text-muted'>В этом курсе рассматриваются понятие языка программирования, особенности Java и его связи с платф...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/java-env">Посмотреть</a>
+<div class="text-muted">&#x42D;&#x442;&#x43E;&#x442; &#x43A;&#x443;&#x440;&#x441; &#x43F;&#x43E;&#x441;&#x432;&#x44F;&#x449;&#x451;&#x43D; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435; &#x43E;&#x448;&#x438;&#x431;&#x43E;&#x43A; &#x432; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x430;&#x445; &#x43D;&#x430; JavaScript. &#x420;&#x430;&#x441;&#x441;&#x43C;&#x430;&#x442;&#x440;&#x438;&#x432;&#x430;&#x44E;&#x442;&#x441;&#x44F; &#x442;&#x430;&#x43A;&#x438;&#x435; &#x442;&#x435;&#x43C;&#x44B;, &#x43A;&#x430;&#x43A; &#x43A;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/js_errors">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-php fab'></i>
-<div class='ml-auto my-auto'>
-19 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-code fal"></i>
+<div class="ml-auto my-auto">
+75 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>PHP: Автоматическое тестирование</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x412;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x435; &#x432; Java</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>Покрывать ли код тестами? Такого вопроса у профессиональных разработчиков не возникает. Это как м...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/php-testing">Посмотреть</a>
+<div class="text-muted">&#x41F;&#x440;&#x430;&#x43A;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x43A;&#x443;&#x440;&#x441; &#x43F;&#x43E; Java &#xAB;&#x441; &#x43D;&#x443;&#x43B;&#x44F;&#xBB; &#x43E;&#x442; &#x438;&#x43D;&#x436;&#x435;&#x43D;&#x435;&#x440;&#x430; &#x441; &#x43E;&#x43F;&#x44B;&#x442;&#x43E;&#x43C; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x44B; &#x432; &#x43A;&#x440;&#x443;&#x43F;&#x43D;&#x435;&#x439;&#x448;&#x438;&#x445; &#x418;&#x422;-&#x43A;&#x43E;&#x43C;&#x43F;&#x430;&#x43D;&#x438;&#x44F;&#x445; &#x43C;&#x438;&#x440;&#x430;.
+
+&#x41A;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/java_101">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-terminal fal'></i>
-<div class='ml-auto my-auto'>
-30 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-php fab"></i>
+<div class="ml-auto my-auto">
+19 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Основы командной строки</h5>
-</div>
-<div class='text-muted'>Командная строка — это первое, с чем сталкивается программист, работающий на *NIX системах, напри...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/cli-basics">Посмотреть</a>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">PHP: &#x410;&#x432;&#x442;&#x43E;&#x43C;&#x430;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x43E;&#x435; &#x442;&#x435;&#x441;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-code fal'></i>
-<div class='ml-auto my-auto'>
-75 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Введение в Java</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>Практический курс по Java «с нуля» от инженера с опытом работы в крупнейших ИТ-компаниях мира.
-
-К...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/java_101">Посмотреть</a>
+<div class="text-muted">&#x41F;&#x43E;&#x43A;&#x440;&#x44B;&#x432;&#x430;&#x442;&#x44C; &#x43B;&#x438; &#x43A;&#x43E;&#x434; &#x442;&#x435;&#x441;&#x442;&#x430;&#x43C;&#x438;? &#x422;&#x430;&#x43A;&#x43E;&#x433;&#x43E; &#x432;&#x43E;&#x43F;&#x440;&#x43E;&#x441;&#x430; &#x443; &#x43F;&#x440;&#x43E;&#x444;&#x435;&#x441;&#x441;&#x438;&#x43E;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x440;&#x430;&#x437;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x447;&#x438;&#x43A;&#x43E;&#x432; &#x43D;&#x435; &#x432;&#x43E;&#x437;&#x43D;&#x438;&#x43A;&#x430;&#x435;&#x442;. &#x42D;&#x442;&#x43E; &#x43A;&#x430;&#x43A; &#x43C;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/php-testing">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-10 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-terminal fal"></i>
+<div class="ml-auto my-auto">
+30 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>JS: Автоматное программирование
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x41E;&#x441;&#x43D;&#x43E;&#x432;&#x44B; &#x43A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;&#x43D;&#x43E;&#x439; &#x441;&#x442;&#x440;&#x43E;&#x43A;&#x438;</h5>
+</div>
+<div class="text-muted">&#x41A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;&#x43D;&#x430;&#x44F; &#x441;&#x442;&#x440;&#x43E;&#x43A;&#x430; &#x2014; &#x44D;&#x442;&#x43E; &#x43F;&#x435;&#x440;&#x432;&#x43E;&#x435;, &#x441; &#x447;&#x435;&#x43C; &#x441;&#x442;&#x430;&#x43B;&#x43A;&#x438;&#x432;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x441;&#x442;, &#x440;&#x430;&#x431;&#x43E;&#x442;&#x430;&#x44E;&#x449;&#x438;&#x439; &#x43D;&#x430; *NIX &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x430;&#x445;, &#x43D;&#x430;&#x43F;&#x440;&#x438;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/cli-basics">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-terminal fal"></i>
+<div class="ml-auto my-auto">
+7 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">Linux: &#x41F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x438;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">&#x423;&#x43C;&#x435;&#x43D;&#x438;&#x435; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x430;&#x442;&#x44C; &#x441; &#x43E;&#x43F;&#x435;&#x440;&#x430;&#x446;&#x438;&#x43E;&#x43D;&#x43D;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x43E;&#x439; Linux &#x2013; &#x43E;&#x434;&#x438;&#x43D; &#x438;&#x437; &#x432;&#x430;&#x436;&#x43D;&#x435;&#x439;&#x448;&#x438;&#x445;
+&#x43D;&#x430;&#x432;&#x44B;&#x43A;&#x43E;&#x432; &#x441;&#x43E;&#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x441;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/linux-users">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+22 &#x447;&#x430;&#x441;&#x430;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">JS: &#x424;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x438;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">&#x422;&#x435;&#x43C;&#x430; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x439; &#x2014; &#x43E;&#x434;&#x43D;&#x430; &#x438;&#x437; &#x446;&#x435;&#x43D;&#x442;&#x440;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x432; JavaScript. &#x418;&#x445; &#x43C;&#x43E;&#x449;&#x44C; &#x43F;&#x43E;&#x437;&#x432;&#x43E;&#x43B;&#x44F;&#x435;&#x442; &#x43F;&#x43E;&#x440;&#x43E;&#x439; &#x442;&#x432;&#x43E;&#x440;&#x438;&#x442;&#x44C; &#x43D;&#x430;&#x441;&#x442;&#x43E;&#x44F;&#x449;&#x438;&#x435; &#x447;&#x443;&#x434;&#x435;&#x441;&#x430;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/js-functions">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+10 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">JS: &#x410;&#x432;&#x442;&#x43E;&#x43C;&#x430;&#x442;&#x43D;&#x43E;&#x435; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;
 </h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>Конечный автомат — удобная модель представления процессов, обладающих несколькими явными состояни...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/js-abp">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-terminal fal'></i>
-<div class='ml-auto my-auto'>
-7 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Linux: Пользователи</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>Умение работать с операционной системой Linux – один из важнейших
-навыков современного программис...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/linux-users">Посмотреть</a>
+<div class="text-muted">&#x41A;&#x43E;&#x43D;&#x435;&#x447;&#x43D;&#x44B;&#x439; &#x430;&#x432;&#x442;&#x43E;&#x43C;&#x430;&#x442; &#x2014; &#x443;&#x434;&#x43E;&#x431;&#x43D;&#x430;&#x44F; &#x43C;&#x43E;&#x434;&#x435;&#x43B;&#x44C; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x43F;&#x440;&#x43E;&#x446;&#x435;&#x441;&#x441;&#x43E;&#x432;, &#x43E;&#x431;&#x43B;&#x430;&#x434;&#x430;&#x44E;&#x449;&#x438;&#x445; &#x43D;&#x435;&#x441;&#x43A;&#x43E;&#x43B;&#x44C;&#x43A;&#x438;&#x43C;&#x438; &#x44F;&#x432;&#x43D;&#x44B;&#x43C;&#x438; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x43D;&#x438;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/js-abp">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-code fal'></i>
-<div class='ml-auto my-auto'>
-26 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-code fal"></i>
+<div class="ml-auto my-auto">
+26 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Протокол HTTP</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x41F;&#x440;&#x43E;&#x442;&#x43E;&#x43A;&#x43E;&#x43B; HTTP</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>Протоколы это наборы соглашений, которые описывают обмен данными между различными программами или...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/http_protocol">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-22 часа
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>JS: Функции</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>Тема функций — одна из центральных в JavaScript. Их мощь позволяет порой творить настоящие чудеса...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/js-functions">Посмотреть</a>
+<div class="text-muted">&#x41F;&#x440;&#x43E;&#x442;&#x43E;&#x43A;&#x43E;&#x43B;&#x44B; &#x44D;&#x442;&#x43E; &#x43D;&#x430;&#x431;&#x43E;&#x440;&#x44B; &#x441;&#x43E;&#x433;&#x43B;&#x430;&#x448;&#x435;&#x43D;&#x438;&#x439;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x43E;&#x43F;&#x438;&#x441;&#x44B;&#x432;&#x430;&#x44E;&#x442; &#x43E;&#x431;&#x43C;&#x435;&#x43D; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x43C;&#x438; &#x43C;&#x435;&#x436;&#x434;&#x443; &#x440;&#x430;&#x437;&#x43B;&#x438;&#x447;&#x43D;&#x44B;&#x43C;&#x438; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x430;&#x43C;&#x438; &#x438;&#x43B;&#x438;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/http_protocol">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-code fal'></i>
-<div class='ml-auto my-auto'>
-3 часа
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-code fal"></i>
+<div class="ml-auto my-auto">
+3 &#x447;&#x430;&#x441;&#x430;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Жизнь программиста</h5>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x416;&#x438;&#x437;&#x43D;&#x44C; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x441;&#x442;&#x430;</h5>
 </div>
-<div class='text-muted'>В этом курсе мы познакомимся с профессией, узнаем о видах компаний,
-где работают программисты, и ...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/prog-life">Посмотреть</a>
+<div class="text-muted">&#x412; &#x44D;&#x442;&#x43E;&#x43C; &#x43A;&#x443;&#x440;&#x441;&#x435; &#x43C;&#x44B; &#x43F;&#x43E;&#x437;&#x43D;&#x430;&#x43A;&#x43E;&#x43C;&#x438;&#x43C;&#x441;&#x44F; &#x441; &#x43F;&#x440;&#x43E;&#x444;&#x435;&#x441;&#x441;&#x438;&#x435;&#x439;, &#x443;&#x437;&#x43D;&#x430;&#x435;&#x43C; &#x43E; &#x432;&#x438;&#x434;&#x430;&#x445; &#x43A;&#x43E;&#x43C;&#x43F;&#x430;&#x43D;&#x438;&#x439;,
+&#x433;&#x434;&#x435; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x430;&#x44E;&#x442; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x441;&#x442;&#x44B;, &#x438; ...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/prog-life">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-22 часа
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+22 &#x447;&#x430;&#x441;&#x430;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>JS: Прототипы
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">JS: &#x41F;&#x440;&#x43E;&#x442;&#x43E;&#x442;&#x438;&#x43F;&#x44B;
 </h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>Этот курс посвящён реализации объектно-ориентированного программирования в JavaScript — прототипа...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/js_prototypes">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-html5 fab'></i>
-<div class='ml-auto my-auto'>
-5 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Введение в веб-разработку</h5>
-</div>
-<div class='text-muted'>Попытка систематизировать знания о веб-разработке и познакомиться с сопутствующими технологиями. ...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/intro_to_web_development">Посмотреть</a>
+<div class="text-muted">&#x42D;&#x442;&#x43E;&#x442; &#x43A;&#x443;&#x440;&#x441; &#x43F;&#x43E;&#x441;&#x432;&#x44F;&#x449;&#x451;&#x43D; &#x440;&#x435;&#x430;&#x43B;&#x438;&#x437;&#x430;&#x446;&#x438;&#x438; &#x43E;&#x431;&#x44A;&#x435;&#x43A;&#x442;&#x43D;&#x43E;-&#x43E;&#x440;&#x438;&#x435;&#x43D;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x432; JavaScript &#x2014; &#x43F;&#x440;&#x43E;&#x442;&#x43E;&#x442;&#x438;&#x43F;&#x430;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/js_prototypes">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-code fal'></i>
-<div class='ml-auto my-auto'>
-17 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-code fal"></i>
+<div class="ml-auto my-auto">
+17 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Структура и интерпретация компьютерных программ</h5>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x421;&#x442;&#x440;&#x443;&#x43A;&#x442;&#x443;&#x440;&#x430; &#x438; &#x438;&#x43D;&#x442;&#x435;&#x440;&#x43F;&#x440;&#x435;&#x442;&#x430;&#x446;&#x438;&#x44F; &#x43A;&#x43E;&#x43C;&#x43F;&#x44C;&#x44E;&#x442;&#x435;&#x440;&#x43D;&#x44B;&#x445; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;</h5>
 </div>
-<div class='text-muted'>Фундаментальный курс, основанный на одноименной книге от профессоров MIT рассказывает об абстракц...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/sicp">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-code fal'></i>
-<div class='ml-auto my-auto'>
-5 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Изучение английского языка</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>Этот текстовый курс поможет вам изучать английский язык. Он посвящен стратегиям и концепциям изуч...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/learning_english">Посмотреть</a>
+<div class="text-muted">&#x424;&#x443;&#x43D;&#x434;&#x430;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x43A;&#x443;&#x440;&#x441;, &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x439; &#x43D;&#x430; &#x43E;&#x434;&#x43D;&#x43E;&#x438;&#x43C;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x43A;&#x43D;&#x438;&#x433;&#x435; &#x43E;&#x442; &#x43F;&#x440;&#x43E;&#x444;&#x435;&#x441;&#x441;&#x43E;&#x440;&#x43E;&#x432; MIT &#x440;&#x430;&#x441;&#x441;&#x43A;&#x430;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x442; &#x43E;&#x431; &#x430;&#x431;&#x441;&#x442;&#x440;&#x430;&#x43A;&#x446;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/sicp">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-php fab'></i>
-<div class='ml-auto my-auto'>
-40 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-html5 fab"></i>
+<div class="ml-auto my-auto">
+5 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>PHP: Массивы</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x412;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x435; &#x432; &#x432;&#x435;&#x431;-&#x440;&#x430;&#x437;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x443;</h5>
 </div>
-</div>
-<div class='text-muted'>Массивы - основной способ объединять данные в коллекции. Вывод курсов на Хекслете, списка сайтов ...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/php-arrays">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-code fal'></i>
-<div class='ml-auto my-auto'>
-34 часа
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Введение в Ruby</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>Ruby – популярный динамический язык, на котором написан легендарный Rails. Он имеет лаконичный си...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/ruby">Посмотреть</a>
+<div class="text-muted">&#x41F;&#x43E;&#x43F;&#x44B;&#x442;&#x43A;&#x430; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x430;&#x442;&#x438;&#x437;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x437;&#x43D;&#x430;&#x43D;&#x438;&#x44F; &#x43E; &#x432;&#x435;&#x431;-&#x440;&#x430;&#x437;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x435; &#x438; &#x43F;&#x43E;&#x437;&#x43D;&#x430;&#x43A;&#x43E;&#x43C;&#x438;&#x442;&#x44C;&#x441;&#x44F; &#x441; &#x441;&#x43E;&#x43F;&#x443;&#x442;&#x441;&#x442;&#x432;&#x443;&#x44E;&#x449;&#x438;&#x43C;&#x438; &#x442;&#x435;&#x445;&#x43D;&#x43E;&#x43B;&#x43E;&#x433;&#x438;&#x44F;&#x43C;&#x438;. ...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/intro_to_web_development">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-terminal fal'></i>
-<div class='ml-auto my-auto'>
-52 часа
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-code fal"></i>
+<div class="ml-auto my-auto">
+5 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Основы реляционных баз данных</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x418;&#x437;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x430;&#x43D;&#x433;&#x43B;&#x438;&#x439;&#x441;&#x43A;&#x43E;&#x433;&#x43E; &#x44F;&#x437;&#x44B;&#x43A;&#x430;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>Взаимодействие с базами данных, неотъемлемая часть разработки. Этот курс знакомит с основными пон...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/rdb-basics">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-code fal'></i>
-<div class='ml-auto my-auto'>
-24 часа
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Регулярные выражения</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>Практически каждый программист сталкивается с регулярными выражениями в повседневной практике. Мн...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/regexp">Посмотреть</a>
+<div class="text-muted">&#x42D;&#x442;&#x43E;&#x442; &#x442;&#x435;&#x43A;&#x441;&#x442;&#x43E;&#x432;&#x44B;&#x439; &#x43A;&#x443;&#x440;&#x441; &#x43F;&#x43E;&#x43C;&#x43E;&#x436;&#x435;&#x442; &#x432;&#x430;&#x43C; &#x438;&#x437;&#x443;&#x447;&#x430;&#x442;&#x44C; &#x430;&#x43D;&#x433;&#x43B;&#x438;&#x439;&#x441;&#x43A;&#x438;&#x439; &#x44F;&#x437;&#x44B;&#x43A;. &#x41E;&#x43D; &#x43F;&#x43E;&#x441;&#x432;&#x44F;&#x449;&#x435;&#x43D; &#x441;&#x442;&#x440;&#x430;&#x442;&#x435;&#x433;&#x438;&#x44F;&#x43C; &#x438; &#x43A;&#x43E;&#x43D;&#x446;&#x435;&#x43F;&#x446;&#x438;&#x44F;&#x43C; &#x438;&#x437;&#x443;&#x447;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/learning_english">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-terminal fal'></i>
-<div class='ml-auto my-auto'>
-26 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-php fab"></i>
+<div class="ml-auto my-auto">
+40 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Базы данных: SQL (DQL)</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">PHP: &#x41C;&#x430;&#x441;&#x441;&#x438;&#x432;&#x44B;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>Data Query Language - язык запросов, составная часть SQL. Состоит из единственной команды SELECT....</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/sql-dql">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-php fab'></i>
-<div class='ml-auto my-auto'>
-52 часа
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>PHP: Построение абстракций</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>Этот курс является адаптацией под php знаменитого курса &quot;Структура и Интерпретация Компьютерных П...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/php-sicp">Посмотреть</a>
+<div class="text-muted">&#x41C;&#x430;&#x441;&#x441;&#x438;&#x432;&#x44B; - &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x43E;&#x439; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431; &#x43E;&#x431;&#x44A;&#x435;&#x434;&#x438;&#x43D;&#x44F;&#x442;&#x44C; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x435; &#x432; &#x43A;&#x43E;&#x43B;&#x43B;&#x435;&#x43A;&#x446;&#x438;&#x438;. &#x412;&#x44B;&#x432;&#x43E;&#x434; &#x43A;&#x443;&#x440;&#x441;&#x43E;&#x432; &#x43D;&#x430; &#x425;&#x435;&#x43A;&#x441;&#x43B;&#x435;&#x442;&#x435;, &#x441;&#x43F;&#x438;&#x441;&#x43A;&#x430; &#x441;&#x430;&#x439;&#x442;&#x43E;&#x432; ...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/php-arrays">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-php fab'></i>
-<div class='ml-auto my-auto'>
-16 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-code fal"></i>
+<div class="ml-auto my-auto">
+34 &#x447;&#x430;&#x441;&#x430;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>PHP PDO: Работа с базой данных</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x412;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x435; &#x432; Ruby</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>PHP предоставляет унифицированный интерфейс PDO для работы с базами данных из кода. Он поддержива...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/php-pdo">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-code fal'></i>
-<div class='ml-auto my-auto'>
-24 часа
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Java Generics</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>Обобщённые типы являются значительным улучшением независимости от типа в языке Java. С их помощью...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/java_generics">Посмотреть</a>
+<div class="text-muted">Ruby &#x2013; &#x43F;&#x43E;&#x43F;&#x443;&#x43B;&#x44F;&#x440;&#x43D;&#x44B;&#x439; &#x434;&#x438;&#x43D;&#x430;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x44F;&#x437;&#x44B;&#x43A;, &#x43D;&#x430; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x43C; &#x43D;&#x430;&#x43F;&#x438;&#x441;&#x430;&#x43D; &#x43B;&#x435;&#x433;&#x435;&#x43D;&#x434;&#x430;&#x440;&#x43D;&#x44B;&#x439; Rails. &#x41E;&#x43D; &#x438;&#x43C;&#x435;&#x435;&#x442; &#x43B;&#x430;&#x43A;&#x43E;&#x43D;&#x438;&#x447;&#x43D;&#x44B;&#x439; &#x441;&#x438;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/ruby">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-27 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-terminal fal"></i>
+<div class="ml-auto my-auto">
+52 &#x447;&#x430;&#x441;&#x430;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>JS: Коллекции
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x41E;&#x441;&#x43D;&#x43E;&#x432;&#x44B; &#x440;&#x435;&#x43B;&#x44F;&#x446;&#x438;&#x43E;&#x43D;&#x43D;&#x44B;&#x445; &#x431;&#x430;&#x437; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">&#x412;&#x437;&#x430;&#x438;&#x43C;&#x43E;&#x434;&#x435;&#x439;&#x441;&#x442;&#x432;&#x438;&#x435; &#x441; &#x431;&#x430;&#x437;&#x430;&#x43C;&#x438; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445;, &#x43D;&#x435;&#x43E;&#x442;&#x44A;&#x435;&#x43C;&#x43B;&#x435;&#x43C;&#x430;&#x44F; &#x447;&#x430;&#x441;&#x442;&#x44C; &#x440;&#x430;&#x437;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x438;. &#x42D;&#x442;&#x43E;&#x442; &#x43A;&#x443;&#x440;&#x441; &#x437;&#x43D;&#x430;&#x43A;&#x43E;&#x43C;&#x438;&#x442; &#x441; &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x44B;&#x43C;&#x438; &#x43F;&#x43E;&#x43D;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/rdb-basics">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-code fal"></i>
+<div class="ml-auto my-auto">
+24 &#x447;&#x430;&#x441;&#x430;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x420;&#x435;&#x433;&#x443;&#x43B;&#x44F;&#x440;&#x43D;&#x44B;&#x435; &#x432;&#x44B;&#x440;&#x430;&#x436;&#x435;&#x43D;&#x438;&#x44F;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">&#x41F;&#x440;&#x430;&#x43A;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438; &#x43A;&#x430;&#x436;&#x434;&#x44B;&#x439; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x441;&#x442; &#x441;&#x442;&#x430;&#x43B;&#x43A;&#x438;&#x432;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x441; &#x440;&#x435;&#x433;&#x443;&#x43B;&#x44F;&#x440;&#x43D;&#x44B;&#x43C;&#x438; &#x432;&#x44B;&#x440;&#x430;&#x436;&#x435;&#x43D;&#x438;&#x44F;&#x43C;&#x438; &#x432; &#x43F;&#x43E;&#x432;&#x441;&#x435;&#x434;&#x43D;&#x435;&#x432;&#x43D;&#x43E;&#x439; &#x43F;&#x440;&#x430;&#x43A;&#x442;&#x438;&#x43A;&#x435;. &#x41C;&#x43D;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/regexp">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-terminal fal"></i>
+<div class="ml-auto my-auto">
+26 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x411;&#x430;&#x437;&#x44B; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445;: SQL (DQL)</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">Data Query Language - &#x44F;&#x437;&#x44B;&#x43A; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x43E;&#x432;, &#x441;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43D;&#x430;&#x44F; &#x447;&#x430;&#x441;&#x442;&#x44C; SQL. &#x421;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x435;&#x434;&#x438;&#x43D;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x43A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;&#x44B; SELECT....</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/sql-dql">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-php fab"></i>
+<div class="ml-auto my-auto">
+52 &#x447;&#x430;&#x441;&#x430;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">PHP: &#x41F;&#x43E;&#x441;&#x442;&#x440;&#x43E;&#x435;&#x43D;&#x438;&#x435; &#x430;&#x431;&#x441;&#x442;&#x440;&#x430;&#x43A;&#x446;&#x438;&#x439;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">&#x42D;&#x442;&#x43E;&#x442; &#x43A;&#x443;&#x440;&#x441; &#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x430;&#x434;&#x430;&#x43F;&#x442;&#x430;&#x446;&#x438;&#x435;&#x439; &#x43F;&#x43E;&#x434; php &#x437;&#x43D;&#x430;&#x43C;&#x435;&#x43D;&#x438;&#x442;&#x43E;&#x433;&#x43E; &#x43A;&#x443;&#x440;&#x441;&#x430; &quot;&#x421;&#x442;&#x440;&#x443;&#x43A;&#x442;&#x443;&#x440;&#x430; &#x438; &#x418;&#x43D;&#x442;&#x435;&#x440;&#x43F;&#x440;&#x435;&#x442;&#x430;&#x446;&#x438;&#x44F; &#x41A;&#x43E;&#x43C;&#x43F;&#x44C;&#x44E;&#x442;&#x435;&#x440;&#x43D;&#x44B;&#x445; &#x41F;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/php-sicp">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-php fab"></i>
+<div class="ml-auto my-auto">
+16 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">PHP PDO: &#x420;&#x430;&#x431;&#x43E;&#x442;&#x430; &#x441; &#x431;&#x430;&#x437;&#x43E;&#x439; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">PHP &#x43F;&#x440;&#x435;&#x434;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x44F;&#x435;&#x442; &#x443;&#x43D;&#x438;&#x444;&#x438;&#x446;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x439; &#x438;&#x43D;&#x442;&#x435;&#x440;&#x444;&#x435;&#x439;&#x441; PDO &#x434;&#x43B;&#x44F; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x44B; &#x441; &#x431;&#x430;&#x437;&#x430;&#x43C;&#x438; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x438;&#x437; &#x43A;&#x43E;&#x434;&#x430;. &#x41E;&#x43D; &#x43F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x438;&#x432;&#x430;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/php-pdo">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-code fal"></i>
+<div class="ml-auto my-auto">
+24 &#x447;&#x430;&#x441;&#x430;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">Java Generics</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">&#x41E;&#x431;&#x43E;&#x431;&#x449;&#x451;&#x43D;&#x43D;&#x44B;&#x435; &#x442;&#x438;&#x43F;&#x44B; &#x44F;&#x432;&#x43B;&#x44F;&#x44E;&#x442;&#x441;&#x44F; &#x437;&#x43D;&#x430;&#x447;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x43C; &#x443;&#x43B;&#x443;&#x447;&#x448;&#x435;&#x43D;&#x438;&#x435;&#x43C; &#x43D;&#x435;&#x437;&#x430;&#x432;&#x438;&#x441;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x43E;&#x442; &#x442;&#x438;&#x43F;&#x430; &#x432; &#x44F;&#x437;&#x44B;&#x43A;&#x435; Java. &#x421; &#x438;&#x445; &#x43F;&#x43E;&#x43C;&#x43E;&#x449;&#x44C;&#x44E;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/java_generics">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+27 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">JS: &#x41A;&#x43E;&#x43B;&#x43B;&#x435;&#x43A;&#x446;&#x438;&#x438;
 </h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>Этот курс посвящен конкретным приемам в работе с коллекциями, которые используются в языке JavaSc...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/js_collections">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-php fab'></i>
-<div class='ml-auto my-auto'>
-16 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>PHP: Ввод и вывод</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>В курсе рассмотрены базовые принципы работы с подсистемой ввода/вывода операционной системы из ph...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/php-io">Посмотреть</a>
+<div class="text-muted">&#x42D;&#x442;&#x43E;&#x442; &#x43A;&#x443;&#x440;&#x441; &#x43F;&#x43E;&#x441;&#x432;&#x44F;&#x449;&#x435;&#x43D; &#x43A;&#x43E;&#x43D;&#x43A;&#x440;&#x435;&#x442;&#x43D;&#x44B;&#x43C; &#x43F;&#x440;&#x438;&#x435;&#x43C;&#x430;&#x43C; &#x432; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x435; &#x441; &#x43A;&#x43E;&#x43B;&#x43B;&#x435;&#x43A;&#x446;&#x438;&#x44F;&#x43C;&#x438;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x44E;&#x442;&#x441;&#x44F; &#x432; &#x44F;&#x437;&#x44B;&#x43A;&#x435; JavaSc...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/js_collections">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-17 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+17 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>JS: Разработка абстракций для асинхронности
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">JS: &#x420;&#x430;&#x437;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x430; &#x430;&#x431;&#x441;&#x442;&#x440;&#x430;&#x43A;&#x446;&#x438;&#x439; &#x434;&#x43B;&#x44F; &#x430;&#x441;&#x438;&#x43D;&#x445;&#x440;&#x43E;&#x43D;&#x43D;&#x43E;&#x441;&#x442;&#x438;
 </h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>Предыдущая версия курса по асинхронному программированию. Полезна в том случае, если вы хотите мо...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/js_async">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-8 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>JS: Настройка окружения</h5>
-</div>
-<div class='text-muted'>В этом курсе рассматриваются понятие языка программирования, особенности JS и его связи с ECMAScr...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/js-setup-environment">Посмотреть</a>
+<div class="text-muted">&#x41F;&#x440;&#x435;&#x434;&#x44B;&#x434;&#x443;&#x449;&#x430;&#x44F; &#x432;&#x435;&#x440;&#x441;&#x438;&#x44F; &#x43A;&#x443;&#x440;&#x441;&#x430; &#x43F;&#x43E; &#x430;&#x441;&#x438;&#x43D;&#x445;&#x440;&#x43E;&#x43D;&#x43D;&#x43E;&#x43C;&#x443; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44E;. &#x41F;&#x43E;&#x43B;&#x435;&#x437;&#x43D;&#x430; &#x432; &#x442;&#x43E;&#x43C; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435;, &#x435;&#x441;&#x43B;&#x438; &#x432;&#x44B; &#x445;&#x43E;&#x442;&#x438;&#x442;&#x435; &#x43C;&#x43E;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/js_async">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-code fal'></i>
-<div class='ml-auto my-auto'>
-18 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-php fab"></i>
+<div class="ml-auto my-auto">
+16 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Java для веб-сервисов</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">PHP: &#x412;&#x432;&#x43E;&#x434; &#x438; &#x432;&#x44B;&#x432;&#x43E;&#x434;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>Курс, продолжающий направление Java, в котором мы, наконец, создадим первый полноценный самодоста...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/java-webservices">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-html5 fab'></i>
-<div class='ml-auto my-auto'>
-8 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Основы HTML, CSS и веб-дизайна</h5>
-</div>
-<div class='text-muted'>Курс посвящен базовым концепциям веб-дизайна, языка разметки HTML и CSS. Мы научимся делать стати...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/html">Посмотреть</a>
+<div class="text-muted">&#x412; &#x43A;&#x443;&#x440;&#x441;&#x435; &#x440;&#x430;&#x441;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x43D;&#x44B; &#x431;&#x430;&#x437;&#x43E;&#x432;&#x44B;&#x435; &#x43F;&#x440;&#x438;&#x43D;&#x446;&#x438;&#x43F;&#x44B; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x44B; &#x441; &#x43F;&#x43E;&#x434;&#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x43E;&#x439; &#x432;&#x432;&#x43E;&#x434;&#x430;/&#x432;&#x44B;&#x432;&#x43E;&#x434;&#x430; &#x43E;&#x43F;&#x435;&#x440;&#x430;&#x446;&#x438;&#x43E;&#x43D;&#x43D;&#x43E;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x438;&#x437; ph...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/php-io">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-php fab'></i>
-<div class='ml-auto my-auto'>
-26 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-php fab"></i>
+<div class="ml-auto my-auto">
+26 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>PHP: Разработка микрофреймворка</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">PHP: &#x420;&#x430;&#x437;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x430; &#x43C;&#x438;&#x43A;&#x440;&#x43E;&#x444;&#x440;&#x435;&#x439;&#x43C;&#x432;&#x43E;&#x440;&#x43A;&#x430;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>Фреймворки — основной способ создавать сложные сайты в интернете. На определённом уровне недостат...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/php-web">Посмотреть</a>
+<div class="text-muted">&#x424;&#x440;&#x435;&#x439;&#x43C;&#x432;&#x43E;&#x440;&#x43A;&#x438; &#x2014; &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x43E;&#x439; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x432;&#x430;&#x442;&#x44C; &#x441;&#x43B;&#x43E;&#x436;&#x43D;&#x44B;&#x435; &#x441;&#x430;&#x439;&#x442;&#x44B; &#x432; &#x438;&#x43D;&#x442;&#x435;&#x440;&#x43D;&#x435;&#x442;&#x435;. &#x41D;&#x430; &#x43E;&#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x451;&#x43D;&#x43D;&#x43E;&#x43C; &#x443;&#x440;&#x43E;&#x432;&#x43D;&#x435; &#x43D;&#x435;&#x434;&#x43E;&#x441;&#x442;&#x430;&#x442;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/php-web">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-23 часа
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-code fal"></i>
+<div class="ml-auto my-auto">
+18 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>JS: Синхронная асинхронность
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">Java &#x434;&#x43B;&#x44F; &#x432;&#x435;&#x431;-&#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x43E;&#x432;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">&#x41A;&#x443;&#x440;&#x441;, &#x43F;&#x440;&#x43E;&#x434;&#x43E;&#x43B;&#x436;&#x430;&#x44E;&#x449;&#x438;&#x439; &#x43D;&#x430;&#x43F;&#x440;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; Java, &#x432; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x43C; &#x43C;&#x44B;, &#x43D;&#x430;&#x43A;&#x43E;&#x43D;&#x435;&#x446;, &#x441;&#x43E;&#x437;&#x434;&#x430;&#x434;&#x438;&#x43C; &#x43F;&#x435;&#x440;&#x432;&#x44B;&#x439; &#x43F;&#x43E;&#x43B;&#x43D;&#x43E;&#x446;&#x435;&#x43D;&#x43D;&#x44B;&#x439; &#x441;&#x430;&#x43C;&#x43E;&#x434;&#x43E;&#x441;&#x442;&#x430;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/java-webservices">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+15 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">JS: HTTP Server</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">&#x42D;&#x442;&#x43E;&#x442; &#x43A;&#x443;&#x440;&#x441; &#x43F;&#x43E;&#x441;&#x432;&#x44F;&#x449;&#x435;&#x43D; &#x437;&#x43D;&#x430;&#x43A;&#x43E;&#x43C;&#x441;&#x442;&#x432;&#x443; &#x441; &#x43F;&#x440;&#x438;&#x43D;&#x446;&#x438;&#x43F;&#x430;&#x43C;&#x438; &#x440;&#x430;&#x437;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x438; &#x43A;&#x43B;&#x438;&#x435;&#x43D;&#x442;-&#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x43D;&#x44B;&#x445; &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x439;.
+&#x41F;&#x440;&#x43E;&#x435;&#x43A;&#x442;&#x43E;&#x43C; &#x43A;&#x443;&#x440;&#x441;&#x430;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/js-http-server">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-html5 fab"></i>
+<div class="ml-auto my-auto">
+8 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x41E;&#x441;&#x43D;&#x43E;&#x432;&#x44B; HTML, CSS &#x438; &#x432;&#x435;&#x431;-&#x434;&#x438;&#x437;&#x430;&#x439;&#x43D;&#x430;</h5>
+</div>
+<div class="text-muted">&#x41A;&#x443;&#x440;&#x441; &#x43F;&#x43E;&#x441;&#x432;&#x44F;&#x449;&#x435;&#x43D; &#x431;&#x430;&#x437;&#x43E;&#x432;&#x44B;&#x43C; &#x43A;&#x43E;&#x43D;&#x446;&#x435;&#x43F;&#x446;&#x438;&#x44F;&#x43C; &#x432;&#x435;&#x431;-&#x434;&#x438;&#x437;&#x430;&#x439;&#x43D;&#x430;, &#x44F;&#x437;&#x44B;&#x43A;&#x430; &#x440;&#x430;&#x437;&#x43C;&#x435;&#x442;&#x43A;&#x438; HTML &#x438; CSS. &#x41C;&#x44B; &#x43D;&#x430;&#x443;&#x447;&#x438;&#x43C;&#x441;&#x44F; &#x434;&#x435;&#x43B;&#x430;&#x442;&#x44C; &#x441;&#x442;&#x430;&#x442;&#x438;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/html">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+8 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">JS: &#x41D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x43E;&#x43A;&#x440;&#x443;&#x436;&#x435;&#x43D;&#x438;&#x44F;</h5>
+</div>
+<div class="text-muted">&#x412; &#x44D;&#x442;&#x43E;&#x43C; &#x43A;&#x443;&#x440;&#x441;&#x435; &#x440;&#x430;&#x441;&#x441;&#x43C;&#x430;&#x442;&#x440;&#x438;&#x432;&#x430;&#x44E;&#x442;&#x441;&#x44F; &#x43F;&#x43E;&#x43D;&#x44F;&#x442;&#x438;&#x435; &#x44F;&#x437;&#x44B;&#x43A;&#x430; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;, &#x43E;&#x441;&#x43E;&#x431;&#x435;&#x43D;&#x43D;&#x43E;&#x441;&#x442;&#x438; JS &#x438; &#x435;&#x433;&#x43E; &#x441;&#x432;&#x44F;&#x437;&#x438; &#x441; ECMAScr...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/js-setup-environment">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+23 &#x447;&#x430;&#x441;&#x430;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">JS: &#x421;&#x438;&#x43D;&#x445;&#x440;&#x43E;&#x43D;&#x43D;&#x430;&#x44F; &#x430;&#x441;&#x438;&#x43D;&#x445;&#x440;&#x43E;&#x43D;&#x43D;&#x43E;&#x441;&#x442;&#x44C;
 </h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>В этом курсе будут подробно рассмотрены promises, coroutines, async/await, которые стали неотъемл...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/js-sync">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-15 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>JS: HTTP Server</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>Этот курс посвящен знакомству с принципами разработки клиент-серверных приложений.
-Проектом курса...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/js-http-server">Посмотреть</a>
+<div class="text-muted">&#x412; &#x44D;&#x442;&#x43E;&#x43C; &#x43A;&#x443;&#x440;&#x441;&#x435; &#x431;&#x443;&#x434;&#x443;&#x442; &#x43F;&#x43E;&#x434;&#x440;&#x43E;&#x431;&#x43D;&#x43E; &#x440;&#x430;&#x441;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x43D;&#x44B; promises, coroutines, async/await, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x441;&#x442;&#x430;&#x43B;&#x438; &#x43D;&#x435;&#x43E;&#x442;&#x44A;&#x435;&#x43C;&#x43B;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/js-sync">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-code fal'></i>
-<div class='ml-auto my-auto'>
-2 часа
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-code fal"></i>
+<div class="ml-auto my-auto">
+2 &#x447;&#x430;&#x441;&#x430;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Maven - автоматизация сборки проектов.</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">Maven - &#x430;&#x432;&#x442;&#x43E;&#x43C;&#x430;&#x442;&#x438;&#x437;&#x430;&#x446;&#x438;&#x44F; &#x441;&#x431;&#x43E;&#x440;&#x43A;&#x438; &#x43F;&#x440;&#x43E;&#x435;&#x43A;&#x442;&#x43E;&#x432;.</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>Этот курс необходим для тех, кто хочет изучить инструмент автоматизации сборки проектов - Maven. ...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/maven">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-28 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>JS: Express</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>Этот курс посвящен JavaScript-микрофреймворку Express и главным аспектам
-работы с подобными фрейм...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/js-express">Посмотреть</a>
+<div class="text-muted">&#x42D;&#x442;&#x43E;&#x442; &#x43A;&#x443;&#x440;&#x441; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C; &#x434;&#x43B;&#x44F; &#x442;&#x435;&#x445;, &#x43A;&#x442;&#x43E; &#x445;&#x43E;&#x447;&#x435;&#x442; &#x438;&#x437;&#x443;&#x447;&#x438;&#x442;&#x44C; &#x438;&#x43D;&#x441;&#x442;&#x440;&#x443;&#x43C;&#x435;&#x43D;&#x442; &#x430;&#x432;&#x442;&#x43E;&#x43C;&#x430;&#x442;&#x438;&#x437;&#x430;&#x446;&#x438;&#x438; &#x441;&#x431;&#x43E;&#x440;&#x43A;&#x438; &#x43F;&#x440;&#x43E;&#x435;&#x43A;&#x442;&#x43E;&#x432; - Maven. ...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/maven">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-32 часа
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+28 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>JS: DOM API</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">JS: Express</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>DOM является основой фронтенд разработки. Работа с любыми фреймворками и
-библиотеками начинается ...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/js-dom">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-code fal'></i>
-<div class='ml-auto my-auto'>
-6 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Java для веб-сервисов Amazon (AWS)</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>Вводный курс по Amazon Web Services, на котором мы с нуля расскажем о том, что это такое, для чег...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/aws">Посмотреть</a>
+<div class="text-muted">&#x42D;&#x442;&#x43E;&#x442; &#x43A;&#x443;&#x440;&#x441; &#x43F;&#x43E;&#x441;&#x432;&#x44F;&#x449;&#x435;&#x43D; JavaScript-&#x43C;&#x438;&#x43A;&#x440;&#x43E;&#x444;&#x440;&#x435;&#x439;&#x43C;&#x432;&#x43E;&#x440;&#x43A;&#x443; Express &#x438; &#x433;&#x43B;&#x430;&#x432;&#x43D;&#x44B;&#x43C; &#x430;&#x441;&#x43F;&#x435;&#x43A;&#x442;&#x430;&#x43C;
+&#x440;&#x430;&#x431;&#x43E;&#x442;&#x44B; &#x441; &#x43F;&#x43E;&#x434;&#x43E;&#x431;&#x43D;&#x44B;&#x43C;&#x438; &#x444;&#x440;&#x435;&#x439;&#x43C;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/js-express">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-terminal fal'></i>
-<div class='ml-auto my-auto'>
-37 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+32 &#x447;&#x430;&#x441;&#x430;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Основы Ansible</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">JS: DOM API</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>Системы управления конфигурацией и оркестрации – важные инструменты в арсенале современного разра...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/ansible">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-60 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Основы программирования</h5>
-</div>
-<div class='text-muted'>Знакомство с миром программирования и популярнейшим языком JavaScript.
-Этот курс рассчитан на нов...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/programming-basics">Посмотреть</a>
+<div class="text-muted">DOM &#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x43E;&#x439; &#x444;&#x440;&#x43E;&#x43D;&#x442;&#x435;&#x43D;&#x434; &#x440;&#x430;&#x437;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x438;. &#x420;&#x430;&#x431;&#x43E;&#x442;&#x430; &#x441; &#x43B;&#x44E;&#x431;&#x44B;&#x43C;&#x438; &#x444;&#x440;&#x435;&#x439;&#x43C;&#x432;&#x43E;&#x440;&#x43A;&#x430;&#x43C;&#x438; &#x438;
+&#x431;&#x438;&#x431;&#x43B;&#x438;&#x43E;&#x442;&#x435;&#x43A;&#x430;&#x43C;&#x438; &#x43D;&#x430;&#x447;&#x438;&#x43D;&#x430;&#x435;&#x442;&#x441;&#x44F; ...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/js-dom">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-php fab'></i>
-<div class='ml-auto my-auto'>
-35 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+17 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>PHP: Функции</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">JS: &#x414;&#x435;&#x440;&#x435;&#x432;&#x44C;&#x44F;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>Функции в PHP способны на большее! В этом курсе вы познакомитесь с такими понятиями, как объекты ...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/php-functions">Посмотреть</a>
+<div class="text-muted">&#x42D;&#x442;&#x43E;&#x442; &#x43A;&#x443;&#x440;&#x441; &#x43F;&#x43E;&#x441;&#x432;&#x44F;&#x449;&#x435;&#x43D; &#x437;&#x43D;&#x430;&#x43A;&#x43E;&#x43C;&#x441;&#x442;&#x432;&#x443; &#x441; &#x43E;&#x434;&#x43D;&#x43E;&#x439; &#x438;&#x437; &#x43D;&#x430;&#x438;&#x431;&#x43E;&#x43B;&#x435;&#x435; &#x447;&#x430;&#x441;&#x442;&#x43E; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x43C;&#x44B;&#x445; &#x441;&#x442;&#x440;&#x443;&#x43A;&#x442;&#x443;&#x440; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445; - &#x434;&#x435;&#x440;&#x435;&#x432;&#x44C;&#x44F;&#x43C;
 </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-php fab'></i>
-<div class='ml-auto my-auto'>
-5 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>PHP: Настройка окружения</h5>
-</div>
-<div class='text-muted'>В этом курсе рассматривается понятие языка программирования, особенности php и настройка локально...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/php-setup-environment">Посмотреть</a>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/js-trees">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-17 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-code fal"></i>
+<div class="ml-auto my-auto">
+6 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>JS: Деревья</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">Java &#x434;&#x43B;&#x44F; &#x432;&#x435;&#x431;-&#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x43E;&#x432; Amazon (AWS)</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>Этот курс посвящен знакомству с одной из наиболее часто используемых структур данных - деревьям
-</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/js-trees">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-28 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>JS: Redux (React)</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>Redux — это официальный способ управлять состоянием в нетривиальных React приложениях. Несмотря н...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/js-redux">Посмотреть</a>
+<div class="text-muted">&#x412;&#x432;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x43A;&#x443;&#x440;&#x441; &#x43F;&#x43E; Amazon Web Services, &#x43D;&#x430; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x43C; &#x43C;&#x44B; &#x441; &#x43D;&#x443;&#x43B;&#x44F; &#x440;&#x430;&#x441;&#x441;&#x43A;&#x430;&#x436;&#x435;&#x43C; &#x43E; &#x442;&#x43E;&#x43C;, &#x447;&#x442;&#x43E; &#x44D;&#x442;&#x43E; &#x442;&#x430;&#x43A;&#x43E;&#x435;, &#x434;&#x43B;&#x44F; &#x447;&#x435;&#x433;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/aws">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-code fal'></i>
-<div class='ml-auto my-auto'>
-37 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-php fab"></i>
+<div class="ml-auto my-auto">
+5 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>JS: Асинхронное программирование</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">PHP: &#x41D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x43E;&#x43A;&#x440;&#x443;&#x436;&#x435;&#x43D;&#x438;&#x44F;</h5>
 </div>
-</div>
-<div class='text-muted'>Курс посвящен знакомству с асинхронной моделью программирования в JavaScript и событийной модели ...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/js-asynchronous-programming">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-php fab'></i>
-<div class='ml-auto my-auto'>
-25 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>PHP: Объектно-ориентированный дизайн</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>Проектирование кода в объектно-ориентированном стиле - целая история со множеством нюансов. В это...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/php-object-oriented-design">Посмотреть</a>
+<div class="text-muted">&#x412; &#x44D;&#x442;&#x43E;&#x43C; &#x43A;&#x443;&#x440;&#x441;&#x435; &#x440;&#x430;&#x441;&#x441;&#x43C;&#x430;&#x442;&#x440;&#x438;&#x432;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x43F;&#x43E;&#x43D;&#x44F;&#x442;&#x438;&#x435; &#x44F;&#x437;&#x44B;&#x43A;&#x430; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;, &#x43E;&#x441;&#x43E;&#x431;&#x435;&#x43D;&#x43D;&#x43E;&#x441;&#x442;&#x438; php &#x438; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430; &#x43B;&#x43E;&#x43A;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/php-setup-environment">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-php fab'></i>
-<div class='ml-auto my-auto'>
-7 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-terminal fal"></i>
+<div class="ml-auto my-auto">
+37 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Ключевые аспекты веб-разработки на PHP</h5>
-</div>
-<div class='text-muted'>Этот обзорный курс затрагивает основные аспекты современной веб-разработки в экосистеме PHP и поз...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/php-overview-of-web-development">Посмотреть</a>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x41E;&#x441;&#x43D;&#x43E;&#x432;&#x44B; Ansible</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-php fab'></i>
-<div class='ml-auto my-auto'>
-57 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>PHP: Введение в ООП</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>В этом курсе идет переход от абстракции с помощью функций к абстракции с помощью данных.</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/php-introduction-to-oop">Посмотреть</a>
+<div class="text-muted">&#x421;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x443;&#x43F;&#x440;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x43A;&#x43E;&#x43D;&#x444;&#x438;&#x433;&#x443;&#x440;&#x430;&#x446;&#x438;&#x435;&#x439; &#x438; &#x43E;&#x440;&#x43A;&#x435;&#x441;&#x442;&#x440;&#x430;&#x446;&#x438;&#x438; &#x2013; &#x432;&#x430;&#x436;&#x43D;&#x44B;&#x435; &#x438;&#x43D;&#x441;&#x442;&#x440;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x44B; &#x432; &#x430;&#x440;&#x441;&#x435;&#x43D;&#x430;&#x43B;&#x435; &#x441;&#x43E;&#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x440;&#x430;&#x437;&#x440;&#x430;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/ansible">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-php fab'></i>
-<div class='ml-auto my-auto'>
-19 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-php fab"></i>
+<div class="ml-auto my-auto">
+35 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>PHP: Основы</h5>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">PHP: &#x424;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x438;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
-<div class='text-muted'>Этот курс базируется на материале https://code-basics.ru и расширяет его необходимыми понятиями, ...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/php-basics">Посмотреть</a>
+</div>
+<div class="text-muted">&#x424;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x438; &#x432; PHP &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431;&#x43D;&#x44B; &#x43D;&#x430; &#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x435;&#x435;! &#x412; &#x44D;&#x442;&#x43E;&#x43C; &#x43A;&#x443;&#x440;&#x441;&#x435; &#x432;&#x44B; &#x43F;&#x43E;&#x437;&#x43D;&#x430;&#x43A;&#x43E;&#x43C;&#x438;&#x442;&#x435;&#x441;&#x44C; &#x441; &#x442;&#x430;&#x43A;&#x438;&#x43C;&#x438; &#x43F;&#x43E;&#x43D;&#x44F;&#x442;&#x438;&#x44F;&#x43C;&#x438;, &#x43A;&#x430;&#x43A; &#x43E;&#x431;&#x44A;&#x435;&#x43A;&#x442;&#x44B; ...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/php-functions">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-20 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+28 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>JS: Последовательности
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">JS: Redux (React)</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">Redux &#x2014; &#x44D;&#x442;&#x43E; &#x43E;&#x444;&#x438;&#x446;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431; &#x443;&#x43F;&#x440;&#x430;&#x432;&#x43B;&#x44F;&#x442;&#x44C; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x44F;&#x43D;&#x438;&#x435;&#x43C; &#x432; &#x43D;&#x435;&#x442;&#x440;&#x438;&#x432;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; React &#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x44F;&#x445;. &#x41D;&#x435;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x44F; &#x43D;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/js-redux">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-code fal"></i>
+<div class="ml-auto my-auto">
+37 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">JS: &#x410;&#x441;&#x438;&#x43D;&#x445;&#x440;&#x43E;&#x43D;&#x43D;&#x43E;&#x435; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">&#x41A;&#x443;&#x440;&#x441; &#x43F;&#x43E;&#x441;&#x432;&#x44F;&#x449;&#x435;&#x43D; &#x437;&#x43D;&#x430;&#x43A;&#x43E;&#x43C;&#x441;&#x442;&#x432;&#x443; &#x441; &#x430;&#x441;&#x438;&#x43D;&#x445;&#x440;&#x43E;&#x43D;&#x43D;&#x43E;&#x439; &#x43C;&#x43E;&#x434;&#x435;&#x43B;&#x44C;&#x44E; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x432; JavaScript &#x438; &#x441;&#x43E;&#x431;&#x44B;&#x442;&#x438;&#x439;&#x43D;&#x43E;&#x439; &#x43C;&#x43E;&#x434;&#x435;&#x43B;&#x438; ...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/js-asynchronous-programming">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-php fab"></i>
+<div class="ml-auto my-auto">
+57 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">PHP: &#x412;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x435; &#x432; &#x41E;&#x41E;&#x41F;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">&#x412; &#x44D;&#x442;&#x43E;&#x43C; &#x43A;&#x443;&#x440;&#x441;&#x435; &#x438;&#x434;&#x435;&#x442; &#x43F;&#x435;&#x440;&#x435;&#x445;&#x43E;&#x434; &#x43E;&#x442; &#x430;&#x431;&#x441;&#x442;&#x440;&#x430;&#x43A;&#x446;&#x438;&#x438; &#x441; &#x43F;&#x43E;&#x43C;&#x43E;&#x449;&#x44C;&#x44E; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x439; &#x43A; &#x430;&#x431;&#x441;&#x442;&#x440;&#x430;&#x43A;&#x446;&#x438;&#x438; &#x441; &#x43F;&#x43E;&#x43C;&#x43E;&#x449;&#x44C;&#x44E; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445;.</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/php-introduction-to-oop">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-php fab"></i>
+<div class="ml-auto my-auto">
+25 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">PHP: &#x41E;&#x431;&#x44A;&#x435;&#x43A;&#x442;&#x43D;&#x43E;-&#x43E;&#x440;&#x438;&#x435;&#x43D;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x439; &#x434;&#x438;&#x437;&#x430;&#x439;&#x43D;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">&#x41F;&#x440;&#x43E;&#x435;&#x43A;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43A;&#x43E;&#x434;&#x430; &#x432; &#x43E;&#x431;&#x44A;&#x435;&#x43A;&#x442;&#x43D;&#x43E;-&#x43E;&#x440;&#x438;&#x435;&#x43D;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x43E;&#x43C; &#x441;&#x442;&#x438;&#x43B;&#x435; - &#x446;&#x435;&#x43B;&#x430;&#x44F; &#x438;&#x441;&#x442;&#x43E;&#x440;&#x438;&#x44F; &#x441;&#x43E; &#x43C;&#x43D;&#x43E;&#x436;&#x435;&#x441;&#x442;&#x432;&#x43E;&#x43C; &#x43D;&#x44E;&#x430;&#x43D;&#x441;&#x43E;&#x432;. &#x412; &#x44D;&#x442;&#x43E;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/php-object-oriented-design">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+20 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">JS: &#x41F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x441;&#x442;&#x438;
 </h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>Продолжение изучения составных данных на более продвинутом уровне. Рассматриваем тип данных «спис...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/sequences">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-php fab'></i>
-<div class='ml-auto my-auto'>
-21 час
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>PHP: Функциональное программирование</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>В этом курсе мы научимся использовать функциональные возможности PHP. Расширим наш арсенал удобны...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/php-functional">Посмотреть</a>
+<div class="text-muted">&#x41F;&#x440;&#x43E;&#x434;&#x43E;&#x43B;&#x436;&#x435;&#x43D;&#x438;&#x435; &#x438;&#x437;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x441;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43D;&#x44B;&#x445; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x43D;&#x430; &#x431;&#x43E;&#x43B;&#x435;&#x435; &#x43F;&#x440;&#x43E;&#x434;&#x432;&#x438;&#x43D;&#x443;&#x442;&#x43E;&#x43C; &#x443;&#x440;&#x43E;&#x432;&#x43D;&#x435;. &#x420;&#x430;&#x441;&#x441;&#x43C;&#x430;&#x442;&#x440;&#x438;&#x432;&#x430;&#x435;&#x43C; &#x442;&#x438;&#x43F; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#xAB;&#x441;&#x43F;&#x438;&#x441;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/sequences">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-python fab'></i>
-<div class='ml-auto my-auto'>
-4 часа
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-php fab"></i>
+<div class="ml-auto my-auto">
+19 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Python: Основы</h5>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">PHP: &#x41E;&#x441;&#x43D;&#x43E;&#x432;&#x44B;</h5>
 </div>
-<div class='text-muted'>Этот курс базируется на материале https://code-basics.ru и расширяет его необходимыми понятиями, ...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/python-basics">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-code fal'></i>
-<div class='ml-auto my-auto'>
-20 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Java: Многопоточность</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>Данный курс посвящён изучению многопоточности в Java. Многопоточность — свойство платформы (напри...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/concurrency">Посмотреть</a>
+<div class="text-muted">&#x42D;&#x442;&#x43E;&#x442; &#x43A;&#x443;&#x440;&#x441; &#x431;&#x430;&#x437;&#x438;&#x440;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x43D;&#x430; &#x43C;&#x430;&#x442;&#x435;&#x440;&#x438;&#x430;&#x43B;&#x435; https://code-basics.ru &#x438; &#x440;&#x430;&#x441;&#x448;&#x438;&#x440;&#x44F;&#x435;&#x442; &#x435;&#x433;&#x43E; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x44B;&#x43C;&#x438; &#x43F;&#x43E;&#x43D;&#x44F;&#x442;&#x438;&#x44F;&#x43C;&#x438;, ...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/php-basics">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-php fab'></i>
-<div class='ml-auto my-auto'>
-47 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-php fab"></i>
+<div class="ml-auto my-auto">
+21 &#x447;&#x430;&#x441;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Веб-разработка на PHP</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">PHP: &#x424;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x43E;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>В курсе разбирается большая часть ключевых тем веб-разработки, начиная от MVC заканчивая процессо...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/php-mvc">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-49 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>JS: React</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>React — библиотека, которая перевернула наши представления о том, как разрабатывать фронтенд. В э...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/js-react">Посмотреть</a>
+<div class="text-muted">&#x412; &#x44D;&#x442;&#x43E;&#x43C; &#x43A;&#x443;&#x440;&#x441;&#x435; &#x43C;&#x44B; &#x43D;&#x430;&#x443;&#x447;&#x438;&#x43C;&#x441;&#x44F; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x43E;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x435; &#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x43E;&#x441;&#x442;&#x438; PHP. &#x420;&#x430;&#x441;&#x448;&#x438;&#x440;&#x438;&#x43C; &#x43D;&#x430;&#x448; &#x430;&#x440;&#x441;&#x435;&#x43D;&#x430;&#x43B; &#x443;&#x434;&#x43E;&#x431;&#x43D;&#x44B;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/php-functional">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-php fab'></i>
-<div class='ml-auto my-auto'>
-19 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-php fab"></i>
+<div class="ml-auto my-auto">
+7 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>PHP: Ассоциативные массивы</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x41A;&#x43B;&#x44E;&#x447;&#x435;&#x432;&#x44B;&#x435; &#x430;&#x441;&#x43F;&#x435;&#x43A;&#x442;&#x44B; &#x432;&#x435;&#x431;-&#x440;&#x430;&#x437;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x438; &#x43D;&#x430; PHP</h5>
 </div>
-</div>
-<div class='text-muted'>Ассоциативный массив  - абстрактный тип данных, коллекция пар «ключ-значение». Например, с помощь...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/php-associative-arrays">Посмотреть</a>
+<div class="text-muted">&#x42D;&#x442;&#x43E;&#x442; &#x43E;&#x431;&#x437;&#x43E;&#x440;&#x43D;&#x44B;&#x439; &#x43A;&#x443;&#x440;&#x441; &#x437;&#x430;&#x442;&#x440;&#x430;&#x433;&#x438;&#x432;&#x430;&#x435;&#x442; &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x44B;&#x435; &#x430;&#x441;&#x43F;&#x435;&#x43A;&#x442;&#x44B; &#x441;&#x43E;&#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x432;&#x435;&#x431;-&#x440;&#x430;&#x437;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x438; &#x432; &#x44D;&#x43A;&#x43E;&#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x435; PHP &#x438; &#x43F;&#x43E;&#x437;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/php-overview-of-web-development">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-20 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-python fab"></i>
+<div class="ml-auto my-auto">
+4 &#x447;&#x430;&#x441;&#x430;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>JS: Составные данные
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">Python: &#x41E;&#x441;&#x43D;&#x43E;&#x432;&#x44B;</h5>
+</div>
+<div class="text-muted">&#x42D;&#x442;&#x43E;&#x442; &#x43A;&#x443;&#x440;&#x441; &#x431;&#x430;&#x437;&#x438;&#x440;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x43D;&#x430; &#x43C;&#x430;&#x442;&#x435;&#x440;&#x438;&#x430;&#x43B;&#x435; https://code-basics.ru &#x438; &#x440;&#x430;&#x441;&#x448;&#x438;&#x440;&#x44F;&#x435;&#x442; &#x435;&#x433;&#x43E; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x44B;&#x43C;&#x438; &#x43F;&#x43E;&#x43D;&#x44F;&#x442;&#x438;&#x44F;&#x43C;&#x438;, ...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/python-basics">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-code fal"></i>
+<div class="ml-auto my-auto">
+20 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">Java: &#x41C;&#x43D;&#x43E;&#x433;&#x43E;&#x43F;&#x43E;&#x442;&#x43E;&#x447;&#x43D;&#x43E;&#x441;&#x442;&#x44C;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">&#x414;&#x430;&#x43D;&#x43D;&#x44B;&#x439; &#x43A;&#x443;&#x440;&#x441; &#x43F;&#x43E;&#x441;&#x432;&#x44F;&#x449;&#x451;&#x43D; &#x438;&#x437;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44E; &#x43C;&#x43D;&#x43E;&#x433;&#x43E;&#x43F;&#x43E;&#x442;&#x43E;&#x447;&#x43D;&#x43E;&#x441;&#x442;&#x438; &#x432; Java. &#x41C;&#x43D;&#x43E;&#x433;&#x43E;&#x43F;&#x43E;&#x442;&#x43E;&#x447;&#x43D;&#x43E;&#x441;&#x442;&#x44C; &#x2014; &#x441;&#x432;&#x43E;&#x439;&#x441;&#x442;&#x432;&#x43E; &#x43F;&#x43B;&#x430;&#x442;&#x444;&#x43E;&#x440;&#x43C;&#x44B; (&#x43D;&#x430;&#x43F;&#x440;&#x438;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/concurrency">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+60 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x41E;&#x441;&#x43D;&#x43E;&#x432;&#x44B; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;</h5>
+</div>
+<div class="text-muted">&#x417;&#x43D;&#x430;&#x43A;&#x43E;&#x43C;&#x441;&#x442;&#x432;&#x43E; &#x441; &#x43C;&#x438;&#x440;&#x43E;&#x43C; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x438; &#x43F;&#x43E;&#x43F;&#x443;&#x43B;&#x44F;&#x440;&#x43D;&#x435;&#x439;&#x448;&#x438;&#x43C; &#x44F;&#x437;&#x44B;&#x43A;&#x43E;&#x43C; JavaScript.
+&#x42D;&#x442;&#x43E;&#x442; &#x43A;&#x443;&#x440;&#x441; &#x440;&#x430;&#x441;&#x441;&#x447;&#x438;&#x442;&#x430;&#x43D; &#x43D;&#x430; &#x43D;&#x43E;&#x432;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/programming-basics">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-php fab"></i>
+<div class="ml-auto my-auto">
+19 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">PHP: &#x410;&#x441;&#x441;&#x43E;&#x446;&#x438;&#x430;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x435; &#x43C;&#x430;&#x441;&#x441;&#x438;&#x432;&#x44B;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">&#x410;&#x441;&#x441;&#x43E;&#x446;&#x438;&#x430;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x43C;&#x430;&#x441;&#x441;&#x438;&#x432;  - &#x430;&#x431;&#x441;&#x442;&#x440;&#x430;&#x43A;&#x442;&#x43D;&#x44B;&#x439; &#x442;&#x438;&#x43F; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445;, &#x43A;&#x43E;&#x43B;&#x43B;&#x435;&#x43A;&#x446;&#x438;&#x44F; &#x43F;&#x430;&#x440; &#xAB;&#x43A;&#x43B;&#x44E;&#x447;-&#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435;&#xBB;. &#x41D;&#x430;&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;, &#x441; &#x43F;&#x43E;&#x43C;&#x43E;&#x449;&#x44C;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/php-associative-arrays">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+49 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">JS: React</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">React &#x2014; &#x431;&#x438;&#x431;&#x43B;&#x438;&#x43E;&#x442;&#x435;&#x43A;&#x430;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x430;&#x44F; &#x43F;&#x435;&#x440;&#x435;&#x432;&#x435;&#x440;&#x43D;&#x443;&#x43B;&#x430; &#x43D;&#x430;&#x448;&#x438; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x43E; &#x442;&#x43E;&#x43C;, &#x43A;&#x430;&#x43A; &#x440;&#x430;&#x437;&#x440;&#x430;&#x431;&#x430;&#x442;&#x44B;&#x432;&#x430;&#x442;&#x44C; &#x444;&#x440;&#x43E;&#x43D;&#x442;&#x435;&#x43D;&#x434;. &#x412; &#x44D;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/js-react">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-php fab"></i>
+<div class="ml-auto my-auto">
+47 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x412;&#x435;&#x431;-&#x440;&#x430;&#x437;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x430; &#x43D;&#x430; PHP</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">&#x412; &#x43A;&#x443;&#x440;&#x441;&#x435; &#x440;&#x430;&#x437;&#x431;&#x438;&#x440;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x430;&#x44F; &#x447;&#x430;&#x441;&#x442;&#x44C; &#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x432;&#x44B;&#x445; &#x442;&#x435;&#x43C; &#x432;&#x435;&#x431;-&#x440;&#x430;&#x437;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x438;, &#x43D;&#x430;&#x447;&#x438;&#x43D;&#x430;&#x44F; &#x43E;&#x442; MVC &#x437;&#x430;&#x43A;&#x430;&#x43D;&#x447;&#x438;&#x432;&#x430;&#x44F; &#x43F;&#x440;&#x43E;&#x446;&#x435;&#x441;&#x441;&#x43E;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/php-mvc">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+20 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">JS: &#x421;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43D;&#x44B;&#x435; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x435;
 </h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>Следующий шаг после освоения основ программирования это изучение идеи составных данных. Этот курс...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/compound_data">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-45 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Введение в программирование</h5>
-</div>
-<div class='text-muted'>Что такое компьютер на самом деле? Понимает ли он языки программирования? Как писать код и свои п...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/introduction_to_programming">Посмотреть</a>
+<div class="text-muted">&#x421;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x439; &#x448;&#x430;&#x433; &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x43E;&#x441;&#x432;&#x43E;&#x435;&#x43D;&#x438;&#x44F; &#x43E;&#x441;&#x43D;&#x43E;&#x432; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x44D;&#x442;&#x43E; &#x438;&#x437;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x438;&#x434;&#x435;&#x438; &#x441;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43D;&#x44B;&#x445; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445;. &#x42D;&#x442;&#x43E;&#x442; &#x43A;&#x443;&#x440;&#x441;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/compound_data">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-22 часа
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+22 &#x447;&#x430;&#x441;&#x430;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>JS: Программирование, управляемое данными
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">JS: &#x41F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;, &#x443;&#x43F;&#x440;&#x430;&#x432;&#x43B;&#x44F;&#x435;&#x43C;&#x43E;&#x435; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x43C;&#x438;
 </h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>В течение этого курса мы будем писать собственную карточную игру и знакомиться с такими важными к...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/ddp">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-js fab'></i>
-<div class='ml-auto my-auto'>
-20 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>JS: Предметно-ориентированное проектирование</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>Курс посвящен процессу создания программных абстракций — моделей предметных областей. На примере ...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/js-ddd">Посмотреть</a>
+<div class="text-muted">&#x412; &#x442;&#x435;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x44D;&#x442;&#x43E;&#x433;&#x43E; &#x43A;&#x443;&#x440;&#x441;&#x430; &#x43C;&#x44B; &#x431;&#x443;&#x434;&#x435;&#x43C; &#x43F;&#x438;&#x441;&#x430;&#x442;&#x44C; &#x441;&#x43E;&#x431;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x443;&#x44E; &#x43A;&#x430;&#x440;&#x442;&#x43E;&#x447;&#x43D;&#x443;&#x44E; &#x438;&#x433;&#x440;&#x443; &#x438; &#x437;&#x43D;&#x430;&#x43A;&#x43E;&#x43C;&#x438;&#x442;&#x44C;&#x441;&#x44F; &#x441; &#x442;&#x430;&#x43A;&#x438;&#x43C;&#x438; &#x432;&#x430;&#x436;&#x43D;&#x44B;&#x43C;&#x438; &#x43A;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/ddp">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-code fal'></i>
-<div class='ml-auto my-auto'>
-17 часов
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+20 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Байт-код Java</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">JS: &#x41F;&#x440;&#x435;&#x434;&#x43C;&#x435;&#x442;&#x43D;&#x43E;-&#x43E;&#x440;&#x438;&#x435;&#x43D;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x43E;&#x435; &#x43F;&#x440;&#x43E;&#x435;&#x43A;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>Данный курс для тех, кто уже знает синтаксис языка, но хотел бы разобраться в том, что из себя пр...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/bytecode">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-code fal'></i>
-<div class='ml-auto my-auto'>
-38 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Java: Структуры данных</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
-</div>
-</div>
-<div class='text-muted'>У курса сразу две цели: познакомить вас с основными структурами данных в программировании и разоб...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/collections">Посмотреть</a>
+<div class="text-muted">&#x41A;&#x443;&#x440;&#x441; &#x43F;&#x43E;&#x441;&#x432;&#x44F;&#x449;&#x435;&#x43D; &#x43F;&#x440;&#x43E;&#x446;&#x435;&#x441;&#x441;&#x443; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x44F; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x43D;&#x44B;&#x445; &#x430;&#x431;&#x441;&#x442;&#x440;&#x430;&#x43A;&#x446;&#x438;&#x439; &#x2014; &#x43C;&#x43E;&#x434;&#x435;&#x43B;&#x435;&#x439; &#x43F;&#x440;&#x435;&#x434;&#x43C;&#x435;&#x442;&#x43D;&#x44B;&#x445; &#x43E;&#x431;&#x43B;&#x430;&#x441;&#x442;&#x435;&#x439;. &#x41D;&#x430; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;&#x435; ...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/js-ddd">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-terminal fal'></i>
-<div class='ml-auto my-auto'>
-24 часа
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-code fal"></i>
+<div class="ml-auto my-auto">
+38 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
 </div>
 </div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Базы данных: SQL (DDL/DML)</h5>
-<div class='ml-auto'>
-<span class='badge badge-light'>PRO</span>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">Java: &#x421;&#x442;&#x440;&#x443;&#x43A;&#x442;&#x443;&#x440;&#x44B; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445;</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
 </div>
 </div>
-<div class='text-muted'>DDL и DML это подмножества языка SQL отвечающие за создание структуры базы данных, модификацию (D...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/postgresql-ddl">Посмотреть</a>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
-<div class='card x-shadow-fade-in h-100' style='min-height: 13rem'>
-<div class='card-header bg-success text-white d-flex flex-column py-2'>
-<div class='d-flex'>
-<i class='fa-2x fa-terminal fal'></i>
-<div class='ml-auto my-auto'>
-6 часов
-</div>
-</div>
-</div>
-<div class='card-body d-flex flex-column'>
-<div class='d-flex'>
-<h5 class='mr-1'>Системы контроля версий (GIT)</h5>
-</div>
-<div class='text-muted'>Хотя курс и называется Git, во многом его цель — объяснить зачем вообще нужен контроль версий,
-и ...</div>
-<div class='mt-auto d-flex'>
-<div class='ml-auto'>
-<a class="x-link-only-hover stretched-link" href="/courses/intro_to_git">Посмотреть</a>
+<div class="text-muted">&#x423; &#x43A;&#x443;&#x440;&#x441;&#x430; &#x441;&#x440;&#x430;&#x437;&#x443; &#x434;&#x432;&#x435; &#x446;&#x435;&#x43B;&#x438;: &#x43F;&#x43E;&#x437;&#x43D;&#x430;&#x43A;&#x43E;&#x43C;&#x438;&#x442;&#x44C; &#x432;&#x430;&#x441; &#x441; &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x44B;&#x43C;&#x438; &#x441;&#x442;&#x440;&#x443;&#x43A;&#x442;&#x443;&#x440;&#x430;&#x43C;&#x438; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x432; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x438; &#x440;&#x430;&#x437;&#x43E;&#x431;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/collections">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-code fal"></i>
+<div class="ml-auto my-auto">
+17 &#x447;&#x430;&#x441;&#x43E;&#x432;
 </div>
-<div class='mb-5 col-lg-4 col-sm-6 col-12'>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x411;&#x430;&#x439;&#x442;-&#x43A;&#x43E;&#x434; Java</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">&#x414;&#x430;&#x43D;&#x43D;&#x44B;&#x439; &#x43A;&#x443;&#x440;&#x441; &#x434;&#x43B;&#x44F; &#x442;&#x435;&#x445;, &#x43A;&#x442;&#x43E; &#x443;&#x436;&#x435; &#x437;&#x43D;&#x430;&#x435;&#x442; &#x441;&#x438;&#x43D;&#x442;&#x430;&#x43A;&#x441;&#x438;&#x441; &#x44F;&#x437;&#x44B;&#x43A;&#x430;, &#x43D;&#x43E; &#x445;&#x43E;&#x442;&#x435;&#x43B; &#x431;&#x44B; &#x440;&#x430;&#x437;&#x43E;&#x431;&#x440;&#x430;&#x442;&#x44C;&#x441;&#x44F; &#x432; &#x442;&#x43E;&#x43C;, &#x447;&#x442;&#x43E; &#x438;&#x437; &#x441;&#x435;&#x431;&#x44F; &#x43F;&#x440;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/bytecode">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-js fab"></i>
+<div class="ml-auto my-auto">
+45 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x412;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x438;&#x435; &#x432; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;</h5>
+</div>
+<div class="text-muted">&#x427;&#x442;&#x43E; &#x442;&#x430;&#x43A;&#x43E;&#x435; &#x43A;&#x43E;&#x43C;&#x43F;&#x44C;&#x44E;&#x442;&#x435;&#x440; &#x43D;&#x430; &#x441;&#x430;&#x43C;&#x43E;&#x43C; &#x434;&#x435;&#x43B;&#x435;? &#x41F;&#x43E;&#x43D;&#x438;&#x43C;&#x430;&#x435;&#x442; &#x43B;&#x438; &#x43E;&#x43D; &#x44F;&#x437;&#x44B;&#x43A;&#x438; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;? &#x41A;&#x430;&#x43A; &#x43F;&#x438;&#x441;&#x430;&#x442;&#x44C; &#x43A;&#x43E;&#x434; &#x438; &#x441;&#x432;&#x43E;&#x438; &#x43F;...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/introduction_to_programming">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-terminal fal"></i>
+<div class="ml-auto my-auto">
+24 &#x447;&#x430;&#x441;&#x430;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x411;&#x430;&#x437;&#x44B; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445;: SQL (DDL/DML)</h5>
+<div class="ml-auto">
+<span class="badge badge-light">PRO</span>
+</div>
+</div>
+<div class="text-muted">DDL &#x438; DML &#x44D;&#x442;&#x43E; &#x43F;&#x43E;&#x434;&#x43C;&#x43D;&#x43E;&#x436;&#x435;&#x441;&#x442;&#x432;&#x430; &#x44F;&#x437;&#x44B;&#x43A;&#x430; SQL &#x43E;&#x442;&#x432;&#x435;&#x447;&#x430;&#x44E;&#x449;&#x438;&#x435; &#x437;&#x430; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x435; &#x441;&#x442;&#x440;&#x443;&#x43A;&#x442;&#x443;&#x440;&#x44B; &#x431;&#x430;&#x437;&#x44B; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445;, &#x43C;&#x43E;&#x434;&#x438;&#x444;&#x438;&#x43A;&#x430;&#x446;&#x438;&#x44E; (D...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/postgresql-ddl">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+<div class="card x-shadow-fade-in h-100" style="min-height: 13rem">
+<div class="card-header bg-success text-white d-flex flex-column py-2">
+<div class="d-flex">
+<i class="fa-2x fa-terminal fal"></i>
+<div class="ml-auto my-auto">
+6 &#x447;&#x430;&#x441;&#x43E;&#x432;
+</div>
+</div>
+</div>
+<div class="card-body d-flex flex-column">
+<div class="d-flex">
+<h5 class="mr-1">&#x421;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x43A;&#x43E;&#x43D;&#x442;&#x440;&#x43E;&#x43B;&#x44F; &#x432;&#x435;&#x440;&#x441;&#x438;&#x439; (GIT)</h5>
+</div>
+<div class="text-muted">&#x425;&#x43E;&#x442;&#x44F; &#x43A;&#x443;&#x440;&#x441; &#x438; &#x43D;&#x430;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x442;&#x441;&#x44F; Git, &#x432;&#x43E; &#x43C;&#x43D;&#x43E;&#x433;&#x43E;&#x43C; &#x435;&#x433;&#x43E; &#x446;&#x435;&#x43B;&#x44C; &#x2014; &#x43E;&#x431;&#x44A;&#x44F;&#x441;&#x43D;&#x438;&#x442;&#x44C; &#x437;&#x430;&#x447;&#x435;&#x43C; &#x432;&#x43E;&#x43E;&#x431;&#x449;&#x435; &#x43D;&#x443;&#x436;&#x435;&#x43D; &#x43A;&#x43E;&#x43D;&#x442;&#x440;&#x43E;&#x43B;&#x44C; &#x432;&#x435;&#x440;&#x441;&#x438;&#x439;,
+&#x438; ...</div>
+<div class="mt-auto d-flex">
+<div class="ml-auto">
+<a class="x-link-only-hover stretched-link" href="/courses/intro_to_git">&#x41F;&#x43E;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C;</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
+</div>
+<div class="mb-5 col-lg-4 col-sm-6 col-12">
 </div>
 </div>
 </div>
 </div>
 
 </main>
-<footer class='footer hexlet-footer text-muted pb-5 mt-5'>
-<div class='container'>
-<div class='row'>
-<div class='col-12 col-lg-4 mt-5'>
-<div class='h2 hexlet-light-title'>
+<footer class="footer hexlet-footer text-muted pb-5 mt-5">
+<div class="container">
+<div class="row">
+<div class="col-12 col-lg-4 mt-5">
+<div class="h2 hexlet-light-title">
 Hexlet,
 2019
 </div>
-<div class='mt-2 h3'>
-<a target="_blank" class="x-link-without-decoration" href="https://www.youtube.com/user/HexletUniversity"><span class='fab fa-youtube mr-2'></span>
-</a><a target="_blank" class="x-link-without-decoration" href="https://t.me/hexlet_ru"><span class='fab fa-telegram mr-2'></span>
-</a><a target="_blank" class="x-link-without-decoration" href="http://twitter.com/HexletHQ"><span class='fab fa-twitter mr-2'></span>
-</a><a target="_blank" class="x-link-without-decoration" href="https://www.facebook.com/Hexlet"><span class='fab fa-facebook mr-2'></span>
-</a><a id="VK95731912" target="_blank" class="x-link-without-decoration" href="https://vk.com/hexlet"><span class='fab fa-vk mr-2'></span>
+<div class="mt-2 h3">
+<a target="_blank" class="x-link-without-decoration" href="https://www.youtube.com/user/HexletUniversity"><span class="fab fa-youtube mr-2"></span>
+</a><a target="_blank" class="x-link-without-decoration" href="https://t.me/hexlet_ru"><span class="fab fa-telegram mr-2"></span>
+</a><a target="_blank" class="x-link-without-decoration" href="http://twitter.com/HexletHQ"><span class="fab fa-twitter mr-2"></span>
+</a><a target="_blank" class="x-link-without-decoration" href="https://www.facebook.com/Hexlet"><span class="fab fa-facebook mr-2"></span>
+</a><a id="VK95731912" target="_blank" class="x-link-without-decoration" href="https://vk.com/hexlet"><span class="fab fa-vk mr-2"></span>
 </a></div>
-<div class='pr-2'>
+<div class="pr-2">
 <hr>
 </div>
 <p>
-<ul class='list-unstyled'>
+</p><ul class="list-unstyled">
 <li>
-<a class="x-link-only-hover" href="/pages/about">О проекте</a>
+<a class="x-link-only-hover" href="/pages/about">&#x41E; &#x43F;&#x440;&#x43E;&#x435;&#x43A;&#x442;&#x435;</a>
 </li>
 <li>
-<a class="x-link-only-hover" href="/testimonials">Отзывы студентов</a>
+<a class="x-link-only-hover" href="/testimonials">&#x41E;&#x442;&#x437;&#x44B;&#x432;&#x44B; &#x441;&#x442;&#x443;&#x434;&#x435;&#x43D;&#x442;&#x43E;&#x432;</a>
 </li>
-<li class='mb-3'>
-<a class="x-link-only-hover" href="/blog/categories/success">Истории успеха</a>
-</li>
-<li>
-<a class="x-link-only-hover" href="/pages/tos">Условия использования</a>
+<li class="mb-3">
+<a class="x-link-only-hover" href="/blog/categories/success">&#x418;&#x441;&#x442;&#x43E;&#x440;&#x438;&#x438; &#x443;&#x441;&#x43F;&#x435;&#x445;&#x430;</a>
 </li>
 <li>
-<a class="x-link-only-hover" href="/pages/privacy">Политика конфиденциальности</a>
+<a class="x-link-only-hover" href="/pages/tos">&#x423;&#x441;&#x43B;&#x43E;&#x432;&#x438;&#x44F; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;</a>
+</li>
+<li>
+<a class="x-link-only-hover" href="/pages/privacy">&#x41F;&#x43E;&#x43B;&#x438;&#x442;&#x438;&#x43A;&#x430; &#x43A;&#x43E;&#x43D;&#x444;&#x438;&#x434;&#x435;&#x43D;&#x446;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x441;&#x442;&#x438;</a>
 </li>
 </ul>
-</p>
-<p class='mt-2' itemscope itemtype='http://schema.org/Organization'>
-<span itemprop='legalName'>Hexlet Ltd.</span>
+<p></p>
+<p class="mt-2" itemscope itemtype="http://schema.org/Organization">
+<span itemprop="legalName">Hexlet Ltd.</span>
 <br>
-<span itemprop='address'>Puolikkotie 8, 02230 Espoo, Finland</span>
+<span itemprop="address">Puolikkotie 8, 02230 Espoo, Finland</span>
 <br>
-<span itemprop='vatID'>VAT ID: FI26641607</span>
+<span itemprop="vatID">VAT ID:&#xA0;FI26641607</span>
 </p>
 </div>
-<div class='col-12 col-sm-6 col-lg-3 mt-5'>
-<div class='h5 mb-3'>Проекты</div>
-<ul class='list-unstyled'>
+<div class="col-12 col-sm-6 col-lg-3 mt-5">
+<div class="h5 mb-3">&#x41F;&#x440;&#x43E;&#x435;&#x43A;&#x442;&#x44B;</div>
+<ul class="list-unstyled">
 <li>
-<a class="x-link-only-hover" href="/projects">Обзор и отзывы</a>
+<a class="x-link-only-hover" href="/projects">&#x41E;&#x431;&#x437;&#x43E;&#x440; &#x438; &#x43E;&#x442;&#x437;&#x44B;&#x432;&#x44B;</a>
 </li>
 <li>
-<a class="x-link-only-hover" href="https://help.hexlet.io/article/29-projects">Что такое проекты</a>
+<a class="x-link-only-hover" href="https://help.hexlet.io/article/29-projects">&#x427;&#x442;&#x43E; &#x442;&#x430;&#x43A;&#x43E;&#x435; &#x43F;&#x440;&#x43E;&#x435;&#x43A;&#x442;&#x44B;</a>
 </li>
 <li>
-<a class="x-link-only-hover" href="https://help.hexlet.io/article/28-projectsoverview">Как записаться</a>
+<a class="x-link-only-hover" href="https://help.hexlet.io/article/28-projectsoverview">&#x41A;&#x430;&#x43A; &#x437;&#x430;&#x43F;&#x438;&#x441;&#x430;&#x442;&#x44C;&#x441;&#x44F;</a>
 </li>
 <li>
-<a class="x-link-only-hover" href="https://help.hexlet.io/article/31-preparing-for-the-project">Как подготовиться</a>
+<a class="x-link-only-hover" href="https://help.hexlet.io/article/31-preparing-for-the-project">&#x41A;&#x430;&#x43A; &#x43F;&#x43E;&#x434;&#x433;&#x43E;&#x442;&#x43E;&#x432;&#x438;&#x442;&#x44C;&#x441;&#x44F;</a>
 </li>
 <li>
-<a class="x-link-only-hover" href="https://help.hexlet.io/article/32-projectpayment">Как оплатить</a>
+<a class="x-link-only-hover" href="https://help.hexlet.io/article/32-projectpayment">&#x41A;&#x430;&#x43A; &#x43E;&#x43F;&#x43B;&#x430;&#x442;&#x438;&#x442;&#x44C;</a>
 </li>
 </ul>
-<div class='h5 mt-5 mb-3'>Подписка</div>
-<ul class='list-unstyled'>
+<div class="h5 mt-5 mb-3">&#x41F;&#x43E;&#x434;&#x43F;&#x438;&#x441;&#x43A;&#x430;</div>
+<ul class="list-unstyled">
 <li>
-<a class="x-link-only-hover" href="https://help.hexlet.io/article/15-subscription">Что такое подписка</a>
+<a class="x-link-only-hover" href="https://help.hexlet.io/article/15-subscription">&#x427;&#x442;&#x43E; &#x442;&#x430;&#x43A;&#x43E;&#x435; &#x43F;&#x43E;&#x434;&#x43F;&#x438;&#x441;&#x43A;&#x430;</a>
 </li>
 <li>
-<a class="x-link-only-hover" href="/referrals">Бонусные дни</a>
+<a class="x-link-only-hover" href="/referrals">&#x411;&#x43E;&#x43D;&#x443;&#x441;&#x43D;&#x44B;&#x435; &#x434;&#x43D;&#x438;</a>
 </li>
 <li>
-<a class="x-link-only-hover" href="/pricing">Цены</a>
+<a class="x-link-only-hover" href="/pricing">&#x426;&#x435;&#x43D;&#x44B;</a>
 </li>
 </ul>
 </div>
-<div class='col-12 col-sm-6 col-lg-3 mt-5'>
-<div class='h5 mb-3'>Компаниям</div>
-<ul class='list-unstyled'>
+<div class="col-12 col-sm-6 col-lg-3 mt-5">
+<div class="h5 mb-3">&#x41A;&#x43E;&#x43C;&#x43F;&#x430;&#x43D;&#x438;&#x44F;&#x43C;</div>
+<ul class="list-unstyled">
 <li>
-<a class="x-link-only-hover" href="/companies/new">Создать компанию</a>
+<a class="x-link-only-hover" href="/companies/new">&#x421;&#x43E;&#x437;&#x434;&#x430;&#x442;&#x44C; &#x43A;&#x43E;&#x43C;&#x43F;&#x430;&#x43D;&#x438;&#x44E;</a>
 </li>
 <li>
-<a class="x-link-only-hover" href="/teams">Обзор возможностей</a>
+<a class="x-link-only-hover" href="/teams">&#x41E;&#x431;&#x437;&#x43E;&#x440; &#x432;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x43E;&#x441;&#x442;&#x435;&#x439;</a>
 </li>
 <li>
-<a class="x-link-only-hover" href="https://help.hexlet.io/article/37-create-new-company">Как начать</a>
+<a class="x-link-only-hover" href="https://help.hexlet.io/article/37-create-new-company">&#x41A;&#x430;&#x43A; &#x43D;&#x430;&#x447;&#x430;&#x442;&#x44C;</a>
 </li>
 </ul>
-<div class='h5 mt-5 mb-3'>Дополнительно</div>
-<ul class='list-unstyled'>
+<div class="h5 mt-5 mb-3">&#x414;&#x43E;&#x43F;&#x43E;&#x43B;&#x43D;&#x438;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;</div>
+<ul class="list-unstyled">
 <li>
 <a class="x-link-only-hover" href="https://code-basics.ru/">Code Basics</a>
 </li>
@@ -1937,33 +1935,34 @@ Hexlet,
 <a class="x-link-only-hover" href="https://guides.hexlet.io/">Hexlet Guides</a>
 </li>
 <li>
-<a class="x-link-only-hover" href="https://ru.hexlet.io/gift">Подарок другу</a>
-<span class='fal fa-gift ml-1'></span>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/gift">&#x41F;&#x43E;&#x434;&#x430;&#x440;&#x43E;&#x43A; &#x434;&#x440;&#x443;&#x433;&#x443;</a>
+<span class="fal fa-gift ml-1"></span>
 </li>
 </ul>
 </div>
-<div class='col-12 col-sm-6 col-lg-2 mt-5'>
-<div class='h5 mb-3'>Помощь</div>
-<ul class='list-unstyled'>
+<div class="col-12 col-sm-6 col-lg-2 mt-5">
+<div class="h5 mb-3">&#x41F;&#x43E;&#x43C;&#x43E;&#x449;&#x44C;</div>
+<ul class="list-unstyled">
 <li>
-<a class="x-link-only-hover" href="/experts">Эксперты</a>
+<a class="x-link-only-hover" href="/experts">&#x42D;&#x43A;&#x441;&#x43F;&#x435;&#x440;&#x442;&#x44B;</a>
 </li>
 <li>
-<a class="x-link-only-hover" href="http://help.hexlet.io">Техподдержка</a>
+<a class="x-link-only-hover" href="http://help.hexlet.io">&#x422;&#x435;&#x445;&#x43F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x43A;&#x430;</a>
 </li>
 <li>
-<a class="x-link-only-hover" href="/community">Сообщество</a>
+<a class="x-link-only-hover" href="/community">&#x421;&#x43E;&#x43E;&#x431;&#x449;&#x435;&#x441;&#x442;&#x432;&#x43E;</a>
 </li>
 <li>
-<a rel="nofollow" class="x-link-only-hover" href="/cdn-cgi/l/email-protection#cab9bfbabaa5b8be8aa2afb2a6afbee4a3a5"><span class="__cf_email__" data-cfemail="aedddbdedec1dcdaeec6cbd6c2cbda80c7c1">[email&#160;protected]</span></a>
+<a rel="nofollow" class="x-link-only-hover" href="/cdn-cgi/l/email-protection#3744424747584543775f524f5b5243195e58"><span class="__cf_email__" data-cfemail="fa898f8a8a95888eba929f82969f8ed49395">[email&#xA0;protected]</span></a>
 </li>
 </ul>
 </div>
 </div>
 </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn2.hexlet.io/assets/application-6b43c0ffd4389a3a253bd4caf2b151e318e4adeddf784a9a87546fa49455ae02.js"></script>
+<script data-cfasync="false" src="hexlet-io-courses_files/cdn-cgi-scripts-5c5dd728-cloudflare-static-email-decode-min.js"></script><script src="https://cdn2.hexlet.io/assets/application-d5d112c1e323d99b3e9ef6048072890e6be0e38795da3d95a8467587ca0bbbdd.js"></script>
 
 
-</body>
-</html>
+
+
+</body></html>
