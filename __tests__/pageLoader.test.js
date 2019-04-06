@@ -5,7 +5,7 @@ import { promises as fsPromises } from 'fs';
 import nock from 'nock';
 import axios from 'axios';
 import httpAdapter from 'axios/lib/adapters/http';
-import loadPage from '..';
+import pageLoader from '..';
 
 axios.defaults.adapter = httpAdapter;
 
@@ -20,7 +20,7 @@ test('Test download page to local folder', async () => {
 
   nock(host).get(pathname).reply(200, expected);
 
-  await loadPage(sourceFilePath, tmpDir);
+  await pageLoader(sourceFilePath, tmpDir);
   const destFileName = await fsPromises.readdir(tmpDir);
   const destFilePath = path.join(tmpDir, destFileName[0]);
   const received = await fsPromises.readFile(destFilePath, 'utf8');
@@ -52,7 +52,7 @@ test('Test download page with links', async () => {
     .get(linkPath)
     .reply(200, filesBody);
 
-  await loadPage(sourceFilePath, tmpDir);
+  await pageLoader(sourceFilePath, tmpDir);
   const destFileName = await fsPromises.readdir(tmpDir);
   const destFilePath = path.join(tmpDir, destFileName[0]);
   const received = await fsPromises.readFile(destFilePath, 'utf8');
