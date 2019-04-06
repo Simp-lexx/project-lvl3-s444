@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import program from 'commander';
 import { version } from '../../package.json';
-import loadPage from '..';
+import pageLoader from '..';
 
 program
   .version(version)
@@ -9,6 +9,6 @@ program
   .arguments('<url>')
   .option('-o, --output [folder]', 'output folder', process.cwd())
   .action((url) => {
-    loadPage(url, program.output);
+    pageLoader(url, program.output);
   })
   .parse(process.argv);
