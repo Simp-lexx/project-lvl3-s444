@@ -22,6 +22,10 @@
 
 [![asciicast](https://asciinema.org/a/mQ6R8HfyRUqYnuHHArHcHyuaK.svg)](https://asciinema.org/a/mQ6R8HfyRUqYnuHHArHcHyuaK)
 
+### Step 5 (Added Listr Spinners)
+
+[![asciicast](https://asciinema.org/a/10eEJOEi7jcEWT41sZKIqyeSJ.svg)](https://asciinema.org/a/10eEJOEi7jcEWT41sZKIqyeSJ)
+
 ## Help
 
 ```Usage: pageloader [options] <url>
