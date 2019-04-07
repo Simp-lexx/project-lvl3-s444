@@ -1,6 +1,6 @@
 {
   "name": "pgload-sl",
-  "version": "0.5.5",
+  "version": "0.5.7",
   "description": "Page Loader",
   "main": "dist/index.js",
   "scripts": {
