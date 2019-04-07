@@ -37,63 +37,64 @@ test('Test download page to local folder', async () => {
 test('Test download page with links', async () => {
   const host = 'https://hexlet.io';
   const pathname = '/';
-  const imgPath = '/test/image.png';
-  const scrPath = '/test/script.js';
-  const lnkPath = '/test/style.css';
-  const filesBody = 'body';
-  const before = await fsPromises.readFile(beforeHtmlPath, 'utf8');
-  const after = await fsPromises.readFile(afterHtmlPath, 'utf8');
+  const pathnameImg = '/test/image.jpg';
+  const pathnameScript = '/test/script.txt';
+  const pathnameLink = '/test/style.css';
+  const bodyForFiles = 'body';
+  const filePath = url.format({ host, pathname });
+  const tempDirName = path.join(os.tmpdir(), 'pg-load-');
 
-  const sourceFilePath = url.format({ host, pathname });
-  const tmpDirName = path.join(os.tmpdir(), 'page-loader-');
-  const tmpDir = await fsPromises.mkdtemp(tmpDirName);
+  const originalHtml = await fsPromises.readFile(beforeHtmlPath, 'utf8');
+  const htmlWithLocalLinks = await fsPromises.readFile(afterHtmlPath, 'utf8');
 
   nock(host)
     .get(pathname)
-    .reply(200, before)
-    .get(imgPath)
-    .reply(200, filesBody)
-    .get(scrPath)
-    .reply(200, filesBody)
-    .get(lnkPath)
-    .reply(200, filesBody);
+    .reply(200, originalHtml)
+    .get(pathnameImg)
+    .reply(200, bodyForFiles)
+    .get(pathnameScript)
+    .reply(200, bodyForFiles)
+    .get(pathnameLink)
+    .reply(200, bodyForFiles);
 
-  await loadPage(sourceFilePath, tmpDir);
-  const destFileName = await fsPromises.readdir(tmpDir);
-  const destFilePath = path.join(tmpDir, destFileName[0]);
-  const received = await fsPromises.readFile(destFilePath, 'utf8');
-  expect(received).toBe(after);
+  const tempDir = await fsPromises.mkdtemp(tempDirName);
+  await loadPage(filePath, tempDir);
+  const fileName = await fsPromises.readdir(tempDir);
+
+  const tempFilePath = path.join(tempDir, fileName[0]);
+  const data = await fsPromises.readFile(tempFilePath, 'utf8');
+
+  expect(data).toBe(htmlWithLocalLinks);
 });
 
 test('Download files', async () => {
   const host = 'https://hexlet.io';
   const pathname = '/';
-  const imgPath = '/test/image.png';
-  const scrPath = '/test/script.txt';
-  const lnkPath = '/test/style.css';
+  const pathnameImg = '/test/image.jpg';
+  const pathnameScript = '/test/script.txt';
+  const pathnameLink = '/test/style.css';
+  const filePath = url.format({ host, pathname });
+  const tempDirName = path.join(os.tmpdir(), 'pg-load-');
 
-  const sourceFilePath = url.format({ host, pathname });
-  const tempDirName = path.join(os.tmpdir(), 'page-loader-');
-
-  const beforeHtml = await fsPromises.readFile(beforeHtmlPath, 'utf8');
+  const originalHtml = await fsPromises.readFile(beforeHtmlPath, 'utf8');
   const expectedImage = await fsPromises.readFile(imagePath, 'utf8');
   const expectedScript = await fsPromises.readFile(scriptPath, 'utf8');
   const expectedCss = await fsPromises.readFile(linkPath, 'utf8');
 
   nock(host)
     .get(pathname)
-    .reply(200, beforeHtml)
-    .get(imgPath)
+    .reply(200, originalHtml)
+    .get(pathnameImg)
     .reply(200, expectedImage)
-    .get(scrPath)
+    .get(pathnameScript)
     .reply(200, expectedScript)
-    .get(lnkPath)
+    .get(pathnameLink)
     .reply(200, expectedCss);
 
   const tempDir = await fsPromises.mkdtemp(tempDirName);
-  await loadPage(sourceFilePath, tempDir);
+  await loadPage(filePath, tempDir);
 
-  const jpgPath = path.join(tempDir, 'hexlet-io_files/test-image.png');
+  const jpgPath = path.join(tempDir, 'hexlet-io_files/test-image.jpg');
   const jsPath = path.join(tempDir, 'hexlet-io_files/test-script.txt');
   const cssPath = path.join(tempDir, 'hexlet-io_files/test-style.css');
 
