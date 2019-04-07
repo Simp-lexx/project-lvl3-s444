@@ -1,6 +1,6 @@
 {
   "name": "pgload-sl",
-  "version": "0.5.3",
+  "version": "0.5.5",
   "description": "Page Loader",
   "main": "dist/index.js",
   "scripts": {
@@ -29,7 +29,7 @@
   ],
   "dependencies": {
     "axios": "^0.18.0",
-    "cheerio": "^1.0.0-rc.2",
+    "cheerio": "^1.0.0-rc.3",
     "commander": "^2.20.0",
     "debug": "^4.1.1",
     "errno": "^0.1.7",

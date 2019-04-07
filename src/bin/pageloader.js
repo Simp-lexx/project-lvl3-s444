@@ -2,9 +2,9 @@
 import program from 'commander';
 import process from 'process';
 import { version } from '../../package.json';
-import pageLoader from '..';
+import loadPage from '..';
 
-import errors from '../errors';
+import errorsProcessing from '../errors';
 
 program
   .version(version)
@@ -12,15 +12,14 @@ program
   .arguments('<url>')
   .option('-o, --output [folder]', 'output folder', process.cwd())
   .action((url) => {
-    pageLoader(url, program.output)
+    loadPage(url, program.output)
       .then(() => {
-        process.exitCode = 0;
         console.log(`Succesfully loaded ${url}`);
       })
       .catch((e) => {
         process.exitCode = 1;
         console.error(`Failed to load ${url}`);
-        const message = errors(e);
+        const message = errorsProcessing(e);
         console.error(message);
       });
   })

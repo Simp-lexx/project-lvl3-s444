@@ -37,16 +37,6 @@ export const formatName = (baseUrl, extension) => {
   return newFileName.concat(newExt);
 };
 
-export const buildFilesArray = (html) => {
-  const $ = cheerio.load(html);
-  const filesArray = [];
-  Object.keys(tagMap).forEach(tag => $(tag).each((i, elem) => {
-    const link = $(elem).attr(tagMap[tag]);
-    if (isFile(link)) filesArray.push(link);
-  }));
-  return filesArray;
-};
-
 export const getDirectLinks = (links, baseUrl) => {
   const { protocol, host, pathname } = url.parse(baseUrl);
   return links.map((link) => {
@@ -57,15 +47,34 @@ export const getDirectLinks = (links, baseUrl) => {
   });
 };
 
-export const updateLocalLinks = (html, dirName) => {
+// export const makeLocalResources = (html, dirName) => {
+//   const $ = cheerio.load(html);
+//   const fileNames = [];
+//   Object.keys(tagMap).forEach(tag => $(tag).map((i, elem) => {
+//     const fileName = $(elem).attr(tagMap[tag]);
+//     if (isFile(fileName)) {
+//       fileNames.push(fileName);
+//       const newLink = `${dirName}/${formatName(fileName)}`;
+//       return $(elem).attr(tagMap[tag], newLink);
+//     }
+//     return '';
+//   }));
+//   return { localHtmlWithLinks: $.html(), localFileNames: fileNames };
+// };
+
+export const makeLocalResources = (html, dirName) => {
   const $ = cheerio.load(html);
-  Object.keys(tagMap).forEach(tag => $(tag).map((i, elem) => {
-    const link = $(elem).attr(tagMap[tag]);
-    if (link && !url.parse(link).hostname && link[1] !== '/') {
-      const newLink = `${dirName}/${formatName(link)}`;
+  const fileNames = [];
+  Object.keys(tagMap).forEach(tag => $(tag)
+    .filter((i, elem) => {
+      const fileName = $(elem).attr(tagMap[tag]);
+      return isFile(fileName);
+    })
+    .each((i, elem) => {
+      const fileName = $(elem).attr(tagMap[tag]);
+      fileNames.push(fileName);
+      const newLink = `${dirName}/${formatName(fileName)}`;
       return $(elem).attr(tagMap[tag], newLink);
-    }
-    return '';
-  }));
-  return $.html();
+    }));
+  return { localHtmlWithLinks: $.html(), localFileNames: fileNames };
 };
