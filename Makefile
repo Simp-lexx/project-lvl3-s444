@@ -2,7 +2,7 @@ install:
 	npm install
 
 start:
-	npx babel-node -- src/bin/gendiff.js
+	npx babel-node -- src/bin/pageloader.js
 
 publish:
 	npm publish
@@ -15,4 +15,7 @@ build:
 	npm run build
 
 test:
-	npm test
+	DEBUG=page-loader npm test
+
+test-watch:
+	npm test --watch

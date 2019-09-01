@@ -1,6 +1,6 @@
 {
-  "name": "page-loader-sl",
-  "version": "0.1.1",
+  "name": "pgload-sl",
+  "version": "0.5.7",
   "description": "Page Loader",
   "main": "dist/index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "prepublishOnly": "npm run build"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "files": [
     "dist"
@@ -28,10 +28,22 @@
     "load page"
   ],
   "dependencies": {
+<<<<<<< HEAD
     "axios": "^0.18.1",
     "commander": "^2.20.0",
     "lodash": "^4.17.15",
     "npm": "^6.11.2"
+=======
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.3",
+    "commander": "^2.20.0",
+    "debug": "^4.1.1",
+    "errno": "^0.1.7",
+    "listr": "^0.14.3",
+    "lodash": "^4.17.11",
+    "npm": "^6.9.0",
+    "process": "^0.11.10"
+>>>>>>> 5e88ac691ee1b94dfcddcaccbe15ee94942fa117
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
