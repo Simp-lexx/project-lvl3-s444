@@ -8,8 +8,21 @@
 
 `$ npm install -g page-loader-sl`
 
-## Test 1
+## Usage
 
-## Test 2
+[![asciicast](https://asciinema.org/a/ky72uPCfob9ZF5J1Z75UFV5zd.svg)](https://asciinema.org/a/ky72uPCfob9ZF5J1Z75UFV5zd)
+
+## Help
+
+```
+Usage: pageloader [options] <url>
+
+Page loader
+
+Options:
+  -V, --version          output the version number
+  -o, --output [folder]  output folder (default: "/home/lexx/jscode/proj-three")
+  -h, --help             output usage information
+```
 
 ## Test 3
